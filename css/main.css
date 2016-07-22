@@ -1,0 +1,403 @@
+/* ==============================
+ ==== Main Body Styling =========
+================================*/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: lato, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+
+/* ==============================
+===== Navbar Styling ============
+===============================*/
+
+nav {
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    background-color: #7e7e7e;
+    height: 120px;
+    line-height: 40px;
+    font-size: 36px;
+}
+
+
+/*Strip the ul of padding and list styling*/
+
+ul#nav_menu {
+    list-style-type: none;
+    float: right;
+    width: auto;
+    margin: 5px;
+    padding: 0;
+}
+
+
+/*========================================================
+============ Create a horizontal list with spacing =======
+======================================================= */
+
+#nav_menu li {
+    display: inline-block;
+    margin-right: 75px;
+}
+
+
+/*Style for menu links*/
+
+#nav_menu li a {
+    display: block;
+    min-width: 140px;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 35px 0px 0px 0px;
+    text-align: center;
+    padding: 0px;
+    font-family: Alice, sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*Hover state for top level links*/
+
+#nav_menu li:hover a {
+    background: #9f6b3f;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #d3d3d3;
+}
+
+[data-tooltip] a {
+    color: #d3d3d3;
+}
+
+/* ============================
+=== End Navbar Stylings ======
+============================= */
+
+
+/*Responsive Styles*/
+
+@media screen and (max-width: 760px) {
+    /*Make all menu links full width*/
+    ul li,
+    li a {
+        width: 100%;
+    }
+}
+
+
+/* =================================================
+====== Section,Paragraph, & Main Title Stylings ==== 
+================================================= */
+
+section {
+    margin-top: 5px;
+    margin-left: 10%;
+    width: 80%;
+    padding: 15px 20px;
+}
+
+#main_title {
+    font-family: Lobster Two, sans-serif;
+    font-size: 52px;
+    color: #9f6b3f;
+    margin-top: 120px;
+    text-align: center;
+    height: auto;
+}
+
+pre {
+    top: 35%;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+@media only screen and (max-width: 400px)  {
+  pre { 
+    top: 35%;
+    width: 115%;
+    height: auto;
+    overflow: hidden;
+    white-space: pre-line;
+  }
+}
+
+#main_title img {
+    border-radius: 50%;
+    top: 90px;
+    margin: auto;
+    z-index: -1;
+}
+
+p {
+    font-family: Alice, serif;
+    font-size: 22px;
+    color:azure;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2em;
+    text-indent: 50px;
+}
+
+p.intro {
+    font-size: 26px;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+p.intro:first-child:first-letter {
+    float: left;
+    color: #9f6b3f;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 0px;
+    padding-left: 3px;
+    font-family: Georgia;
+}
+
+section p:first-child {
+    text-indent: 0px;
+}
+
+section p:first-child:first-letter {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+main {
+    overflow: auto;
+    padding-bottom: 120px;
+    /* must be same height as the footer */
+}
+
+hr.hr_style {
+    border-style: solid;
+    border-color: #9f6b3f;
+    border-width: 3px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.hr_style:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #9f6b3f;
+    border-width: 0 0 3px 0;
+    border-radius: 20px;
+}
+
+span {
+    font-family: Alice, sans-serif;
+    margin-top: 35px;
+    margin-left: 30px;
+    display: inline-block;
+    font-size: 18px;
+    color: #d3d3d3;
+}
+
+span#initials {
+    background-color: #9f6b3f;
+    color: #d3d3d3;
+    font-size: 36px;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+span.section_header {
+    position: absolute;
+    left: 44%;
+    bottom: 53%;
+    font-size: 46px;
+    color: #9f6b3f;
+}
+
+#initials + span {
+    font-size: 26px;
+    /* Styling for name on left side. Used sibling "+" selector.*/
+}
+
+
+/* =================================================
+====== End of Main Title,Paragragh etc Stylings ====
+================================================= */
+
+
+/* =====================================
+===== Styling for Portfolio Images =====
+====================================== */
+
+figure.img:hover {
+    border: 2px solid #9f6b3f;
+}
+
+figure.img:last-child {
+    margin-bottom: 20px;
+}
+
+#portfolio figure:nth-child(odd) {
+    margin-left: 20%;
+}
+
+figcaption.desc {
+    font-family: Alice, serif;
+    background-color: #4f5a65;
+    padding: 15px;
+    text-align: center;
+}
+
+#contact_area {
+    clear: both;
+}
+
+h3 {
+    font-size: 46px;
+    color: #9f6b3f;
+    margin: 30px;
+    width: 75%;
+}
+
+
+/* ==========================================
+=======  Styling for the Contact and Form
+=======  area  ==============================
+========================================== */
+
+#contact-area {
+    margin-bottom: 25px;
+}
+
+#contact-area input,
+#contact-area textarea {
+    padding: 5px;
+    width: 100%;
+    font-family: Alice, sans-serif;
+    font-size: 1.4em;
+    background-color: #d3d3c1;
+    margin: 0px 0px 10px 0px;
+    border: 2px solid #ccc;
+}
+
+#contact-area textarea:focus,
+#contact-area input:focus {
+    border: 2px solid #9f6b3f;
+    ;
+}
+
+#contact-area input.submit-button:hover {
+    background: #9e5b24;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #9e5b24 0%, #995423 66%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #9e5b24 0%, #995423 66%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #9e5b24 0%, #995423 66%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9e5b24', endColorstr='#995423', GradientType=0);
+    /* IE6-9 */
+}
+
+#contact-area input:focus {
+    border: 2px solid #9f6b3f;
+}
+
+#contact-area input.submit-button {
+    border: 2px solid black;
+    border-radius: 25px;
+    width: auto;
+    margin-top: 10px;
+    background: #9f6b3f;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #eab92d 0%, #9f6b3f 87%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#eab92d', endColorstr='#9f6b3f', GradientType=0);
+    /* IE6-9 */
+}
+
+#contact_me {
+    font-family: Alice, serif;
+    font-size: 26px;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: auto;
+    color: azure;
+    padding-top: 5px;
+    font-size: 1.4em;
+}
+
+
+/* ============================
+======Styling for Footer ======
+==============================*/
+
+#footer {
+    position: relative;
+    height: auto;
+    margin-top: -120px;
+    /* negative value of footer height */
+    /*height: 120px; Important! Must adjust margin-bottom of directly above element(s) to match height of footer.*/
+    background-color: #7e7e7e;
+}
+
+h4 {
+    margin-left: 40%;
+    font-family: Alice, sans-serif;
+    font-size: 38px;
+    margin-top: 5px;
+}
+
+#footer_menu i:hover:before {
+    font-size: 64px;
+}
+
+ul#footer_menu {
+    list-style-type: none;
+    margin-left: 40%;
+}
+
+#footer_menu li {
+    display: inline-block;
+    margin: 5px 15px;
+    width: 65px;
+    height: 65px;
+}
+
+#footer_menu i {
+    min-height: 64px;
+    min-width: 64px;
+    position: absolute;/* Prevents other icons from moving on hover */
+}
+
+
