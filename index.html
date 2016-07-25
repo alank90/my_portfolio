@@ -32,7 +32,7 @@
             <!-- ================================
     ========== Markup for Navbar =======
     =================================-->
-            <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a href="doc/resume.pdf" target="_blank">AK</a></span>
+            <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a href="#openModal">AK</a></span>
                 <span>ALAN KILLIAN</span>
                 <ul id="nav_menu">
                     <li><a href="#contact-area">CONTACT</a></li>
@@ -166,7 +166,20 @@
                 <li><a href="https://www.twitter.coman"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
             </ul>
         </footer>
+
+
     </div>
+
+       <!-- ====================================================
+       ============== Markup for the resume .pdf Modal  ========
+       =======================================================-->
+
+    <div id="openModal" class="modal">
+      <div> <a href="#close" title="Close" class="close">X</a>
+         <h2>My Resume</h2>
+         <iframe src="http://akillian.x10host.com/my_portfolio/doc/resume.pdf"> </iframe>
+      </div>
+  </div>
 </body>
 
 </html>
