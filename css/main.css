@@ -168,7 +168,7 @@ section p:first-child:first-letter {
 
 main {
     overflow: auto;
-    padding-bottom: 14vh;
+    padding-bottom: 12vh;
     /* must be same height as the footer */
 }
 
@@ -343,9 +343,9 @@ label {
 
 #footer {
     position: relative;
-    margin-top: -14vh;
+    margin-top: -12vh;
     /* negative value of footer height */
-    /*height: 120px; Important! Must adjust margin-bottom of directly above element(s) to match height of footer.*/
+    /*height: -12vh; Important! Must adjust margin-bottom of directly above element(s) to match height of footer.*/
     background-color: #7e7e7e;
 }
 
