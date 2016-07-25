@@ -95,17 +95,6 @@ a:visited {
 ============================= */
 
 
-/*Responsive Styles*/
-
-@media screen and (max-width: 760px) {
-    /*Make all menu links full width*/
-    ul li,
-    li a {
-        width: 100%;
-    }
-}
-
-
 /* =================================================
 ====== Section,Paragraph, & Main Title Stylings ==== 
 ================================================= */
@@ -130,16 +119,6 @@ pre {
     top: 35%;
     overflow: hidden;
     white-space: pre-line;
-}
-
-@media only screen and (max-width: 400px)  {
-  pre { 
-    top: 35%;
-    width: 115%;
-    height: auto;
-    overflow: hidden;
-    white-space: pre-line;
-  }
 }
 
 #main_title img {
@@ -189,7 +168,7 @@ section p:first-child:first-letter {
 
 main {
     overflow: auto;
-    padding-bottom: 120px;
+    padding-bottom: 14vh;
     /* must be same height as the footer */
 }
 
@@ -364,8 +343,7 @@ label {
 
 #footer {
     position: relative;
-    height: auto;
-    margin-top: -120px;
+    margin-top: -14vh;
     /* negative value of footer height */
     /*height: 120px; Important! Must adjust margin-bottom of directly above element(s) to match height of footer.*/
     background-color: #7e7e7e;
@@ -389,14 +367,14 @@ ul#footer_menu {
 
 #footer_menu li {
     display: inline-block;
-    margin: 5px 15px;
-    width: 65px;
-    height: 65px;
+    margin: 5px 10px;
+    width: 7vw;
+    height: 7vh;
 }
 
 #footer_menu i {
-    min-height: 64px;
-    min-width: 64px;
+    min-height: 1.2em;
+    min-width: 1.2em;
     position: absolute;/* Prevents other icons from moving on hover */
 }
 
@@ -469,8 +447,48 @@ iframe  {
 }
 
 h2  {
-  font-size:.1.1em;
+  font-size: 1.1em;
   margin: 5px;
 }
 
-/*End of Modal Css */
+
+/* ==============================================
+========== @media Responsive Styles =============
+===============================================*/
+
+@media screen and (max-width: 760px) {
+    /*Make all menu links full width*/
+    ul li,
+    li a {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px)  {
+  pre {
+    top: 35%;
+    width: 115%;
+    height: auto;
+    overflow: hidden;
+    white-space: pre-line;
+  }
+}
+
+@media screen and (max-width: 760px)  {
+    iframe  {
+        width: 80vw;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px)  {
+   .footer_header {
+       font-size: 1.9em;
+       margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 760px)  {
+   ul#footer_menu {
+      margin-left: 25%;
+   }
