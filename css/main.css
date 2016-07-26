@@ -401,10 +401,12 @@ ul#footer_menu {
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
+
 .modal:target {
 	opacity:1;
 	pointer-events: auto;
 }
+
 
 .modal > div {
     height: 88vh;
@@ -444,6 +446,7 @@ iframe  {
    height: 80vh;
    width: 85vw;
    border:none;
+   display: none;
 }
 
 h2  {

@@ -176,10 +176,27 @@
     <div id="openModal" class="modal">
       <div> <a href="#close" title="Close" class="close">X</a>
          <h2>My Resume</h2>
-         <iframe src="http://akillian.x10host.com/my_portfolio/doc/resume.pdf"> </iframe>
+         <iframe id="iframe_display" src="doc/resume.pdf"> </iframe>
       </div>
   </div>
 
+ <!-- ================================================================================
+   This Javascript is required for IE and Android browsers. It seems that they do not
+   respect the opacity property on load so need a hack to make it work...        =====
+  ================================================================================ -->
+<script>
+    document.getElementById("initials").addEventListener("click", function (event) {
+        // Make iFrame appear on click
+        document.getElementById("iframe_display").style.display = "block";
+    }, false);
+
+    /*getElementsByClassName actually returns an HTMLCollection, even though you have only one element with that classname in DOM, so you have to retrieve it with index 0. Alternatively, since we only have one element with the classname, you can safely use querySelector, which will return the first match element.*/
+    var element = document.querySelector('.close');
+    element.addEventListener("click", function (event) {
+        // Change iframe back to invisible
+        document.getElementById("iframe_display").style.display = "none";
+    }, false);
+</script>
  </body>
 
 </html>
