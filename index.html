@@ -32,8 +32,13 @@
             <!-- ================================
     ========== Markup for Navbar =======
     =================================-->
+<<<<<<< HEAD
             <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
                 <span>ALAN KILLIAN</span>
+=======
+            <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a href="#openModal">AK</a></span>
+                <span class="myName">ALAN KILLIAN</span>
+>>>>>>> origin/master
                 <ul id="nav_menu">
                     <li><a href="#contact-area">CONTACT</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
@@ -185,6 +190,7 @@
    respect the opacity property on load so need a hack to make it work...        =====
   ================================================================================ -->
   <script>
+<<<<<<< HEAD
     if (window.matchMedia("(max-width: 800px)").matches) {
         /* the viewport is no more then 800 pixels wide
             so no modal ==============================*/
@@ -209,6 +215,20 @@
         }, false);
     }
 </script>
+=======
+    document.getElementById("initials").addEventListener("click", function (event) {
+        // Make iFrame appear on click
+        document.getElementById("iframe_display").style.display = "block";
+    }, false);
+
+    /*getElementsByClassName actually returns an HTMLCollection, even though you have only one element with that classname in DOM, so you have to retrieve it with index 0. Alternatively, since we only have one element with the classname, you can safely use querySelector, which will return the first match element.*/
+    var element = document.querySelector('.close');
+    element.addEventListener("click", function (event) {
+        // Change iframe back to invisible
+        document.getElementById("iframe_display").style.display = "none";
+    }, false);
+  </script>
+>>>>>>> origin/master
  </body>
 
 </html>
