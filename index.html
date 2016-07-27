@@ -33,7 +33,7 @@
     ========== Markup for Navbar =======
     =================================-->
             <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a href="#openModal">AK</a></span>
-                <span>ALAN KILLIAN</span>
+                <span class="myName">ALAN KILLIAN</span>
                 <ul id="nav_menu">
                     <li><a href="#contact-area">CONTACT</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
@@ -184,7 +184,7 @@
    This Javascript is required for IE and Android browsers. It seems that they do not
    respect the opacity property on load so need a hack to make it work...        =====
   ================================================================================ -->
-<script>
+  <script>
     document.getElementById("initials").addEventListener("click", function (event) {
         // Make iFrame appear on click
         document.getElementById("iframe_display").style.display = "block";
@@ -196,7 +196,7 @@
         // Change iframe back to invisible
         document.getElementById("iframe_display").style.display = "none";
     }, false);
-</script>
+  </script>
  </body>
 
 </html>

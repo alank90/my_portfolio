@@ -60,8 +60,8 @@ ul#nav_menu {
 
 #nav_menu li a {
     display: block;
-    min-width: 140px;
-    font-size: 24px;
+
+    font-size: .7em;
     font-weight: 500;
     margin: 35px 0px 0px 0px;
     text-align: center;
@@ -216,8 +216,8 @@ span.section_header {
     color: #9f6b3f;
 }
 
-#initials + span {
-    font-size: 26px;
+.myName {
+    font-size: .6em;
     /* Styling for name on left side. Used sibling "+" selector.*/
 }
 
@@ -357,7 +357,7 @@ h4 {
 }
 
 #footer_menu i:hover:before {
-    font-size: 64px;
+    font-size: 40px;
 }
 
 ul#footer_menu {
@@ -375,7 +375,7 @@ ul#footer_menu {
 #footer_menu i {
     min-height: 1.2em;
     min-width: 1.2em;
-    position: absolute;/* Prevents other icons from moving on hover */
+    position: absolute; /*Prevents other icons from moving on hover */
 }
 
 /* ================================================================================
@@ -459,14 +459,6 @@ h2  {
 ========== @media Responsive Styles =============
 ===============================================*/
 
-@media screen and (max-width: 760px) {
-    /*Make all menu links full width*/
-    ul li,
-    li a {
-        width: 100%;
-    }
-}
-
 @media only screen and (max-width: 400px)  {
   pre {
     top: 35%;
@@ -477,21 +469,41 @@ h2  {
   }
 }
 
-@media screen and (max-width: 760px)  {
-    iframe  {
+@media screen and (max-width: 760px) {
+    /*Make all menu links full width*/
+    ul li,
+    li a {
+        width: 100%;
+    }
+
+
+    .myName  {
+       font-size: .5em;
+       margin-left: .4em;
+    }
+     iframe  {
         width: 80vw;
         max-width: 100%;
     }
 }
 
-@media screen and (max-width: 760px)  {
-   .footer_header {
-       font-size: 1.9em;
-       margin-left: 20%;
-    }
+@media screen and (max-width: 1040px)  {
+    #nav_menu li a {
+        width: 4vw;
+        margin: auto;
+        font-size: .5em;
+        min-width: 100%
+   }
 }
 
 @media screen and (max-width: 760px)  {
-   ul#footer_menu {
+   .footer_header {
+       font-size: 1.8em;
+       margin-left: 20%;
+    }
+     ul#footer_menu {
       margin-left: 25%;
-   }
+    }
+}
+
+
