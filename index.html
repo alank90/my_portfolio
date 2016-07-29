@@ -36,10 +36,11 @@
             <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
                 <span>ALAN KILLIAN</span>
 
-                <ul id="nav_menu">
+                <ul id="nav_menu" class="topnav">
                     <li><a href="#contact-area">CONTACT</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#about">ABOUT</a></li>
+                    <li id="idIcon" class="icon"><a href="#" >&#9776;</a></li>
                 </ul>
             </nav>
 
@@ -184,6 +185,25 @@
       </div>
   </div>
 
+<!-- ============Javascript Below This Line ========================-->
+
+<!-- ==============================================
+=========== Javascript for Responsive Menu ========
+=============================================== -->
+<script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    document.getElementById("idIcon").addEventListener("click", toggleResponsive);
+
+    function toggleResponsive() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        }
+        else {
+            x.className = "topnav";
+        }
+    }
+</script>
  <!-- ================================================================================
    This Javascript is required for IE and Android browsers. It seems that they do not
    respect the opacity property on load so need a hack to make it work...        =====
