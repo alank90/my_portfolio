@@ -34,15 +34,22 @@
     =================================-->
 
             <nav>
-               <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
-                <span>ALAN KILLIAN</span>
-
-                <ul id="myTopnav" class="topnav">
+             <div class="row">
+               <div class=" .col-m-2 col-2">
+                  <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
+                 </div>
+                 <div class=" .col-m-2 col-2">
+                   <span>ALAN KILLIAN</span>
+                 </div>
+                <div class=".col-m-8 col-8">
+                 <ul id="myTopnav" class="topnav">
                     <li><a href="#contact-area">CONTACT</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li class="icon"><a href="#" >&#9776;</a></li>
-                </ul>
+                 </ul>
+                </div>
+              </div>
             </nav>
 
             <section id="main_title">
@@ -193,10 +200,10 @@
 =============================================== -->
 <script>
     /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-    document.getElementById("idIcon").addEventListener("click", toggleResponsive);
-
+    document.getElementById("myTopnav").addEventListener("click", toggleResponsive);
     function toggleResponsive() {
         var x = document.getElementById("myTopnav");
+        console.log(x);
         if (x.className === "topnav") {
             x.className += " responsive";
         }

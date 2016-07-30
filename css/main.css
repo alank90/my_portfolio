@@ -63,7 +63,7 @@ ul.topnav li a {
 }
 
 /* Change background color of links on hover */
-ul.topnav li a:hover {
+ul.topnav li:not(:last-child) a:hover {
     background-color: #9f6b3f;
 }
 
@@ -177,10 +177,6 @@ hr.hr_style:before {
 }
 
 span {
-    position: relative;
-    top: 45px;
-    margin-top: 40px;
-    margin-left: 55px;
     font-family: Alice, sans-serif;
     font-size: 1.4em;
     color: #d3d3d3;
@@ -456,12 +452,12 @@ h2  {
 
 
 /*  ===================================
-    Media Queries for Responsive Menu
+    @media Queries for Responsive Menu
 ===================================== */
 
-/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+/* When the screen is less than 680 pixels wide, hide all list items, except for the last one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:925px) {
-    ul.topnav li {
+    ul.topnav li:not(:last-child) {
         display: none;
     }
     ul.topnav li.icon {
@@ -490,17 +486,19 @@ h2  {
         top: 0;
     }
     ul.topnav.responsive li {
-        float: none;
-        display: inline;
-    }
+         float: none;
+         display: inline;
+         position: relative;
+         left: 80vw;
+         top: 14vh;
+         font-size: .7em;
+   }
     ul.topnav.responsive li a {
         display: block;
         text-align: left;
     }
 }
-/*  End Media Queries Responsive Menu*/
-
-
+/*  End @media Queries for Responsive Menu*/
 
 
 @media screen and (max-width: 760px)  {
