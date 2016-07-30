@@ -37,8 +37,7 @@ nav {
 /* Remove margins and padding from the list, and add a black background color */
 ul.topnav {
     list-style-type: none;
-    width: 100%;
-    /*    overflow: hidden;*/
+     /*    overflow: hidden;*/
     margin: 0;
     padding: 0;
 }
@@ -54,7 +53,6 @@ ul.topnav li a {
     display: inline-block;
     color: #f2f2f2;
     font-family: Alice, sans-serif;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     transition: 0.3s;
@@ -65,11 +63,16 @@ ul.topnav li a {
 /* Change background color of links on hover */
 ul.topnav li:not(:last-child) a:hover {
     background-color: #9f6b3f;
+
 }
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {
     display: none;
+}
+
+a:link  {
+    color:antiquewhite;
 }
 
 a:visited {
@@ -185,6 +188,7 @@ span {
 span#initials {
     background-color: #9f6b3f;
     color: #d3d3d3;
+    margin-left: 25px;
     font-size: 2.2em;
     padding: 20px;
     border-radius: 50%;
@@ -421,7 +425,9 @@ ul#footer_menu {
 	box-shadow: 1px 1px 3px #000;
 }
 
-.close:hover { background: #9f6b3f; }
+.close:hover {
+    background: #9f6b3f;
+}
 
 iframe  {
    height: 80vh;
@@ -463,6 +469,9 @@ h2  {
     ul.topnav li.icon {
         float: right;
         display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
 
@@ -477,25 +486,17 @@ h2  {
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:925px) {
-    ul.topnav.responsive {
-        position: relative;
-    }
-    ul.topnav.responsive li.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
+
+
     ul.topnav.responsive li {
          float: none;
          display: inline;
-         position: relative;
-         left: 80vw;
-         top: 14vh;
          font-size: .7em;
    }
     ul.topnav.responsive li a {
         display: block;
-        text-align: left;
+        text-align: right;
+        width: 100%;
     }
 }
 /*  End @media Queries for Responsive Menu*/
@@ -509,6 +510,13 @@ h2  {
      ul#footer_menu {
       margin-left: 25%;
     }
+}
+
+
+
+.initialsAndName {
+    margin-top: 25px;
+
 }
 
 
