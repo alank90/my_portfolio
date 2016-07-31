@@ -478,19 +478,8 @@ h2  {
     }
 }
 
-/* @media screen and (max-width: 760px) {
-    Make all menu links full width
-    ul li,
-    li a {
-        width: 100%;
-    }
-}
-*/
-
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:925px) {
-
-
     ul.topnav.responsive li {
          float: none;
          display: inline;
