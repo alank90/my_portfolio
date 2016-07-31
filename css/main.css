@@ -34,7 +34,7 @@ nav {
     padding: 0;
 }
 
-/* Remove margins and padding from the list, and add a black background color */
+/* Remove margins and padding from the list */
 ul.topnav {
     list-style-type: none;
      /*    overflow: hidden;*/
@@ -63,7 +63,10 @@ ul.topnav li a {
 /* Change background color of links on hover */
 ul.topnav li:not(:last-child) a:hover {
     background-color: #9f6b3f;
+}
 
+.initialsAndName {
+    margin-top: 25px;
 }
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
@@ -496,7 +499,6 @@ h2  {
     ul.topnav.responsive li a {
         display: block;
         text-align: right;
-        width: 100%;
     }
 }
 /*  End @media Queries for Responsive Menu*/
@@ -513,10 +515,5 @@ h2  {
 }
 
 
-
-.initialsAndName {
-    margin-top: 25px;
-
-}
 
 
