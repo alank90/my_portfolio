@@ -476,6 +476,17 @@ h2  {
     }
 }
 
+@media only screen and (max-width: 500px)  {
+   .navName {
+     margin-left: 30px;
+     width: 85px;
+     padding: 0;
+   }
+   .navName span  {
+        font-size: 1.2em;
+   }
+}
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:925px) {
     ul.topnav.responsive li {
