@@ -61,7 +61,7 @@ ul.topnav li a {
 }
 
 /* Change background color of links on hover */
-ul.topnav li:not(:last-child) a:hover {
+ul.topnav li:not(:first-child) a:hover {
     background-color: #9f6b3f;
 }
 
@@ -466,7 +466,7 @@ h2  {
 
 /* When the screen is less than 680 pixels wide, hide all list items, except for the last one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:925px) {
-    ul.topnav li:not(:last-child) {
+    ul.topnav li:not(:first-child) {
         display: none;
     }
     ul.topnav li.icon {
