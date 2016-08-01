@@ -65,9 +65,7 @@ ul.topnav li:not(:first-child) a:hover {
     background-color: #9f6b3f;
 }
 
-.initialsAndName {
-    margin-top: 25px;
-}
+
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {
@@ -506,3 +504,15 @@ h2  {
 
 
 
+
+.divMenu {
+    margin-top: 25px;
+}
+
+.initials {
+    margin-top: 25px;
+}
+
+.navName {
+    margin-top: 25px;
+}
