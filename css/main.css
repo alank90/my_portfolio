@@ -474,7 +474,7 @@ h2  {
     @media Queries for Responsive Menu
 ===================================== */
 
-/* When the screen is less than 680 pixels wide, hide all list items, except for the last one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:925px) {
     ul.topnav li:not(:first-child) {
         display: none;
@@ -487,8 +487,13 @@ h2  {
         right: 0;
     }
 }
-
-@media only screen and (max-width:490px)  {
+/*These next two media queries are rather kludgy but this is how I got the
+the menu items to appear right underneath the menu icon. Basically, we gave
+the parent element ul.topnav a defined width. Then made the li elements
+inline-block and gave them a width of 100% (this matches the parent element then of 30vw.).
+Oila, The li elements shrink to fit and no longer take up width of page. Like I said very
+kludgy.*/
+@media only screen and (max-width:600px)  {
    .navName {
      margin-left: 30px;
      width: 25%;
@@ -497,31 +502,15 @@ h2  {
    .navName span  {
         font-size: 1.1em;
    }
+    ul.topnav.responsive  {
+      width: 30vw;
+    }
    .divMenu li:not(:first-child)  {
        position: relative;
-       bottom: 35vh;
-       left: 2vw;
+       width: 100%;
+       bottom: 25vh;
+       left: 60vw;
     }
-    ul.topnav li:not(:first-child) a:hover {
-       background-color: transparent;
-    }
-}
-
-@media only screen and (min-width:491) and (max-width: 600px)  {
-   .navName {
-     margin-left: 30px;
-     width: 25px;
-     padding: 0;
-   }
-   .navName span  {
-        font-size: 1.1em;
-   }
-   .divMenu li:not(:first-child)  {
-       position: relative;
-       bottom: 35vh;
-       left: 2vw;
-    }
-
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
