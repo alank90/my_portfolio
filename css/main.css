@@ -66,6 +66,18 @@ ul.topnav li:not(:first-child) a:hover {
 }
 
 
+.divMenu {
+    margin-top: 25px;
+}
+
+.initials {
+    margin-top: 25px;
+}
+
+.navName {
+    margin-top: 25px;
+}
+
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {
@@ -476,15 +488,40 @@ h2  {
     }
 }
 
-@media only screen and (max-width: 500px)  {
+@media only screen and (max-width:490px)  {
    .navName {
      margin-left: 30px;
-     width: 85px;
+     width: 25%;
      padding: 0;
    }
    .navName span  {
-        font-size: 1.2em;
+        font-size: 1.1em;
    }
+   .divMenu li:not(:first-child)  {
+       position: relative;
+       bottom: 35vh;
+       left: 2vw;
+    }
+    ul.topnav li:not(:first-child) a:hover {
+       background-color: transparent;
+    }
+}
+
+@media only screen and (min-width:491) and (max-width: 600px)  {
+   .navName {
+     margin-left: 30px;
+     width: 25px;
+     padding: 0;
+   }
+   .navName span  {
+        font-size: 1.1em;
+   }
+   .divMenu li:not(:first-child)  {
+       position: relative;
+       bottom: 35vh;
+       left: 2vw;
+    }
+
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
@@ -493,10 +530,12 @@ h2  {
          float: none;
          display: inline;
          font-size: .7em;
+         padding: 0;
    }
     ul.topnav.responsive li a {
         display: block;
         text-align: right;
+        padding: 0;
     }
 }
 /*  End @media Queries for Responsive Menu*/
@@ -515,15 +554,3 @@ h2  {
 
 
 
-
-.divMenu {
-    margin-top: 25px;
-}
-
-.initials {
-    margin-top: 25px;
-}
-
-.navName {
-    margin-top: 25px;
-}
