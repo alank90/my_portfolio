@@ -504,12 +504,13 @@ kludgy.*/
    }
     ul.topnav.responsive  {
       width: 30vw;
+      height: 0;
     }
-   .divMenu li:not(:first-child)  {
+   .divMenu .responsive li:not(:first-child)  {
        position: relative;
        width: 100%;
        bottom: 25vh;
-       left: 60vw;
+       left: 57vw;
     }
 }
 
