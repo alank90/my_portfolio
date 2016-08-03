@@ -33,14 +33,23 @@
     ========== Markup for Navbar =======
     =================================-->
 
-            <nav> <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
-                <span>ALAN KILLIAN</span>
-
-                <ul id="nav_menu">
-                    <li><a href="#contact-area">CONTACT</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                </ul>
+            <nav>
+             <div class="row">
+               <div class="col-m-2 col-2 initials">
+                  <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
+               </div>
+               <div class="col-m-2 col-2 navName">
+                  <span>ALAN KILLIAN</span>
+               </div>
+               <div class="col-m-8 col-8 divMenu">
+                  <ul id="myTopnav" class="topnav">
+                     <li class="icon"><a href="#" >&#9776;</a></li>
+                     <li><a href="#contact-area">CONTACT</a></li>
+                     <li><a href="#portfolio">PORTFOLIO</a></li>
+                     <li><a href="#about">ABOUT</a></li>
+                  </ul>
+                </div>
+              </div>
             </nav>
 
             <section id="main_title">
@@ -73,7 +82,7 @@
                 <div class="row">
                     <div class="col-6">
                         <figure>
-                            <a target="_blank" href="img/modest_mouse_page.JPG">
+                            <a target="_blank" href="http://akillian.x10host.com/modestmouse/">
                                 <img src="img/modest_mouse_page.JPG"></a>
                             <figcaption class="desc">Modest Mouse Tribute</figcaption>
                         </figure>
@@ -184,6 +193,25 @@
       </div>
   </div>
 
+<!-- ============Javascript Below This Line ========================-->
+
+<!-- ==============================================
+=========== Javascript for Responsive Menu ========
+=============================================== -->
+<script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    document.getElementById("myTopnav").addEventListener("click", toggleResponsive);
+    function toggleResponsive() {
+        var x = document.getElementById("myTopnav");
+        console.log(x);
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        }
+        else {
+            x.className = "topnav";
+        }
+    }
+</script>
  <!-- ================================================================================
    This Javascript is required for IE and Android browsers. It seems that they do not
    respect the opacity property on load so need a hack to make it work...        =====

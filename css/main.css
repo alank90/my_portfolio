@@ -23,70 +23,72 @@ body {
 ===== Navbar Styling ============
 ===============================*/
 
+ /* Remove margins and padding from the list */
 nav {
-    width: 100%;
     font-family: Lato, sans-serif;
     font-weight: 600;
     font-style: normal;
     background-color: #7e7e7e;
     height: 120px;
-    line-height: 40px;
-    font-size: 36px;
-}
-
-
-/*Strip the ul of padding and list styling*/
-
-ul#nav_menu {
-    list-style-type: none;
-    float: right;
-    width: auto;
-    margin: 5px;
+    margin: 0;
     padding: 0;
 }
 
+/* Remove margins and padding from the list */
+ul.topnav {
+    list-style-type: none;
+     /*    overflow: hidden;*/
+    margin: 0;
+    padding: 0;
+}
 
-/*========================================================
-============ Create a horizontal list with spacing =======
-======================================================= */
+/* Float the list items side by side */
+ul.topnav li {
+    float: right;
+    margin: 15px 20px;
+}
 
-#nav_menu li {
+/* Style the links inside the list items */
+ul.topnav li a {
     display: inline-block;
-    margin-right: 75px;
-}
-
-
-/*Style for menu links*/
-
-#nav_menu li a {
-    display: block;
-
-    font-size: .7em;
-    font-weight: 500;
-    margin: 35px 0px 0px 0px;
-    text-align: center;
-    padding: 0px;
+    color: #f2f2f2;
     font-family: Alice, sans-serif;
-    color: #fff;
+    padding: 14px 16px;
     text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* Change background color of links on hover */
+ul.topnav li:not(:first-child) a:hover {
+    background-color: #9f6b3f;
 }
 
 
-/*Hover state for top level links*/
-
-#nav_menu li:hover a {
-    background: #9f6b3f;
+.divMenu {
+    margin-top: 25px;
 }
 
-a:hover {
-    text-decoration: none;
+.initials {
+    margin-top: 25px;
+}
+
+.navName {
+    margin-top: 25px;
+}
+
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {
+    display: none;
+}
+
+a:link  {
+    color:antiquewhite;
 }
 
 a:visited {
-    color: #d3d3d3;
-}
-
-[data-tooltip] a {
     color: #d3d3d3;
 }
 
@@ -192,18 +194,15 @@ hr.hr_style:before {
 
 span {
     font-family: Alice, sans-serif;
-    margin-top: 35px;
-    margin-left: 30px;
-    display: inline-block;
-    font-size: 18px;
+    font-size: 1.4em;
     color: #d3d3d3;
 }
 
 span#initials {
     background-color: #9f6b3f;
     color: #d3d3d3;
-    font-size: 36px;
-    margin: 30px;
+    margin-left: 25px;
+    font-size: 2.2em;
     padding: 20px;
     border-radius: 50%;
 }
@@ -225,7 +224,6 @@ span.section_header {
 /* =================================================
 ====== End of Main Title,Paragragh etc Stylings ====
 ================================================= */
-
 
 /* =====================================
 ===== Styling for Portfolio Images =====
@@ -440,7 +438,9 @@ ul#footer_menu {
 	box-shadow: 1px 1px 3px #000;
 }
 
-.close:hover { background: #9f6b3f; }
+.close:hover {
+    background: #9f6b3f;
+}
 
 iframe  {
    height: 80vh;
@@ -469,32 +469,67 @@ h2  {
   }
 }
 
-@media screen and (max-width: 760px) {
-    /*Make all menu links full width*/
-    ul li,
-    li a {
-        width: 100%;
-    }
 
+/*  ===================================
+    @media Queries for Responsive Menu
+===================================== */
 
-    .myName  {
-       font-size: .5em;
-       margin-left: .4em;
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:925px) {
+    ul.topnav li:not(:first-child) {
+        display: none;
     }
-     iframe  {
-        width: 80vw;
-        max-width: 100%;
+    ul.topnav li.icon {
+        float: right;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
-
-@media screen and (max-width: 1040px)  {
-    #nav_menu li a {
-        width: 4vw;
-        margin: auto;
-        font-size: .5em;
-        min-width: 100%
+/*These next two media queries are rather kludgy but this is how I got the
+the menu items to appear right underneath the menu icon. Basically, we gave
+the parent element ul.topnav a defined width. Then made the li elements
+inline-block and gave them a width of 100% (this matches the parent element then of 30vw.).
+Oila, The li elements shrink to fit and no longer take up width of page. Like I said very
+kludgy.*/
+@media only screen and (max-width:600px)  {
+   .navName {
+     margin-left: 30px;
+     width: 25%;
+     padding: 0;
    }
+   .navName span  {
+        font-size: 1.1em;
+   }
+    ul.topnav.responsive  {
+      width: 30vw;
+      height: 0;
+    }
+   .divMenu .responsive li:not(:first-child)  {
+       position: relative;
+       width: 100%;
+       bottom: 25vh;
+       left: 57vw;
+    }
 }
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width:925px) {
+    ul.topnav.responsive li {
+         float: none;
+         display: inline;
+         font-size: .7em;
+         padding: 0;
+   }
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: right;
+        padding: 0;
+    }
+}
+/*  End @media Queries for Responsive Menu*/
+
 
 @media screen and (max-width: 760px)  {
    .footer_header {
@@ -505,5 +540,7 @@ h2  {
       margin-left: 25%;
     }
 }
+
+
 
 
