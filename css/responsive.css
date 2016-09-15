@@ -293,7 +293,7 @@ html {
 /*Styling for Images on Page. If the width property is set to 100%, the image will be responsive and scale up and down. If set to max-width:100% the image will only scale down if necessary.*/
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
