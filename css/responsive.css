@@ -159,7 +159,7 @@ table {
 /* ===== Change Background Image for smaller devices =================*/
 
 html {
-    background: url(/img/small_big_country.jpg) no-repeat center center fixed;
+    background: url(img/small_big_country.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -171,7 +171,7 @@ html {
 
 @media only screen and (min-device-width: 400px) {
     html {
-        background: url(/img/big_country.jpg) no-repeat center center fixed;
+        background: url(img/big_country.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
