@@ -164,6 +164,9 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /* Animation CSS for site */
+    -webkit-animation: kenburns-top 3s ease-out both;
+    animation: kenburns-top 3s ease-out both;
 }
 
 
@@ -176,6 +179,8 @@ html {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        -webkit-animation: kenburns-top 3s ease-out both;
+        animation: kenburns-top 3s ease-out both;
     }
 }
 
