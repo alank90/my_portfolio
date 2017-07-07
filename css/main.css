@@ -382,7 +382,7 @@ label {
     margin-top: -12vh;
     /* negative value of footer height */
     /*height: -12vh; Important! Must adjust margin-bottom of directly above element(s) to match height of footer.*/
-    background-color: #7e7e7e;
+   background-color: rgba(53,53,53,0.7);
 }
 
 h4 {
