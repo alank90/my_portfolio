@@ -17,8 +17,8 @@
 
 /*================================================================================
    This Javascript is required for IE and Android browsers. It seems that they do not
-   respect the opacity property on load so need a hack to make it work...        =====
-  /*================================================================================ */
+   respect the opacity property on load so need a hack to make it work...
+  ================================================================================ */
 
  if (window.matchMedia("(max-width: 800px)").matches) {
         /* the viewport is no more then 800 pixels wide
