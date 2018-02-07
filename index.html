@@ -10,8 +10,8 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-    
-    
+
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/tooltips.css">
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic,300,900" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
-     <!--======  Script here to cause blocking and prevent FOUT occuring ====-->
+    <!--======  Script here to cause blocking and prevent FOUT occuring ====-->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 </head>
@@ -37,22 +37,45 @@
     =================================-->
 
             <nav class="fill">
-             <div class="row">
-               <div class="col-m-2 col-2 initials">
-                  <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume"><a class="classInitials" href="#openModal">AK</a></span>
-               </div>
-               <div class="col-m-4 col-4 navName">
-                   <span>A</span><span>L</span><span>A</span><span>N</span>&nbsp; <span>K</span><span>I</span><span>L</span><span>L</span><span>I</span><span>A</span><span>N</span>
-               </div>
-               <div class="col-m-6 col-6 divMenu">
-                  <ul id="myTopnav" class="topnav">
-                     <li class="icon"><a href="#" ><img src="img/menuFilled.png" alt="Menu"></a></li>
-                     <li><a href="#contact-area">CONTACT</a></li>
-                     <li><a href="#portfolio">PORTFOLIO</a></li>
-                     <li><a href="#about">ABOUT</a></li>
-                  </ul>
+                <div class="row">
+                    <div class="col-m-2 col-2 initials">
+                        <span class="tooltip-bottom" id="initials" data-tooltip="Click to see my Resume">
+                            <a class="classInitials" href="#openModal">AK</a>
+                        </span>
+                    </div>
+                    <div class="col-m-4 col-4 navName">
+                        <span>A</span>
+                        <span>L</span>
+                        <span>A</span>
+                        <span>N</span>&nbsp;
+                        <span>K</span>
+                        <span>I</span>
+                        <span>L</span>
+                        <span>L</span>
+                        <span>I</span>
+                        <span>A</span>
+                        <span>N</span>
+                    </div>
+                    <div class="col-m-6 col-6 divMenu">
+                        <ul id="myTopnav" class="topnav">
+                            <li class="icon">
+                                <a href="#">
+                                    <img src="img/menuFilled.png" alt="Menu">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact-area">CONTACT</a>
+                            </li>
+                            <li>
+                                <a href="#portfolio">PORTFOLIO</a>
+                            </li>
+                            <li>
+                                <a href="#about">ABOUT</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </div>  <!-- End Row -->
+                <!-- End Row -->
             </nav>
 
             <section id="main_title">
@@ -71,9 +94,22 @@
             <div class="row">
                 <div class="col-12">
                     <section id="about" role="region">
-                        <p class="intro">Hi. My name is Alan and I'm a Full Stack web developer. What do I mean by that. To me, a Full Stack Developer is someone with familiarity in each layer, if not mastery in many and a genuine interest in all software technology. I have spent the last three years learning and coding for my job as a Technology Consultant in one of the most elite school districts in the country.</p>
-                        <p>In that capacity I have set up and maintained a LAMP server for the school to allow Teachers and Students to learn Web Development in the classroom. Secondly, developed an Inventory tracking system for the Highschool and also a Trouble Ticketing application for Teachers and Staff to more easily contact us with problems and be able to track their status. Also developed a Test Quiz app for Teachers to quickly create quizzes. These quizzes can then be administered online and stored in MySQL database. I have also assisted Staff with training on different Web technologies in the classroom.</p>
-                        <p>I count in my skill set proficiency in HTML5, CSS, Javascript and jQuery. My back-end skills include PHP and MySQL. I have also attained my Cisco certificate as a Network Associate. This is gives me the ability to have the knowledge to understand the whole picture. Good developers who are familiar with the entire stack know how to make life easier for those around them. This involves understanding what can break and why, taking no resource for granted. </p>
+                        <p class="intro">Hi. My name is Alan and I'm a Full Stack web developer. What do I mean by that. To me, a Full Stack
+                            Developer is someone with familiarity in each layer, if not mastery in many and a genuine interest
+                            in all software technology. I have spent the last three years learning and coding for my job
+                            as a Technology Consultant in one of the most elite school districts in the country.</p>
+                        <p>In that capacity I have set up and maintained a LAMP server for the school to allow Teachers and
+                            Students to learn Web Development in the classroom. Secondly, developed an Inventory tracking
+                            system for the Highschool and also a Trouble Ticketing application for Teachers and Staff to
+                            more easily contact us with problems and be able to track their status. Also developed a Test
+                            Quiz app for Teachers to quickly create quizzes. These quizzes can then be administered online
+                            and stored in MySQL database. I have also assisted Staff with training on different Web technologies
+                            in the classroom.</p>
+                        <p>I count in my skill set proficiency in HTML5, CSS, Javascript and jQuery. My back-end skills include
+                            PHP and MySQL. I have also attained my Cisco certificate as a Network Associate. This is gives
+                            me the ability to have the knowledge to understand the whole picture. Good developers who are
+                            familiar with the entire stack know how to make life easier for those around them. This involves
+                            understanding what can break and why, taking no resource for granted. </p>
                     </section>
                 </div>
             </div>
@@ -81,12 +117,33 @@
 
             <section id="portfolio" role="region">
                 <h3>Portfolio</h3>
-                
+
+                <div class="row">
+                    <div class="col-6">
+                        <figure>
+                            <a target="_blank" href="https://expresschart.herokuapp.com/">
+                                <img src="img/chart_img.PNG">
+                            </a>
+                            <figcaption class="desc">Express Chart. Web App</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-6">
+                        <figure>
+                            <a target="_blank" href="img/chartII.PNG">
+                                <img src="img/chartII.PNG">
+                            </a>
+                            <figcaption class="desc">Created with Node.js and Browserify</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="http://akillian.x10host.com/modestmouse/">
-                                <img src="img/modest_mouse_page.JPG"></a>
+                                <img src="img/modest_mouse_page.JPG">
+                            </a>
                             <figcaption class="desc">Modest Mouse. No Carousel Plugin Used.</figcaption>
                         </figure>
                     </div>
@@ -94,17 +151,19 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/modest_mouse_page_II.JPG">
-                                <img src="img/modest_mouse_page_II.JPG"></a>
+                                <img src="img/modest_mouse_page_II.JPG">
+                            </a>
                             <figcaption class="desc">No Extraneous Libraries Needed.</figcaption>
                         </figure>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="http://akillian.x10host.com/gallery/">
-                                <img src="img/gallery_page.JPG"></a>
+                                <img src="img/gallery_page.JPG">
+                            </a>
                             <figcaption class="desc">Photo Gallery using Flexbox</figcaption>
                         </figure>
                     </div>
@@ -112,7 +171,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/gallery_page2.JPG">
-                                <img src="img/gallery_page2.JPG"></a>
+                                <img src="img/gallery_page2.JPG">
+                            </a>
                             <figcaption class="desc">Plain Vanilla JS w/CSS</figcaption>
                         </figure>
                     </div>
@@ -122,7 +182,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="http://akillian.x10host.com/movie/">
-                                <img src="img/tmdb1.PNG"></a>
+                                <img src="img/tmdb1.PNG">
+                            </a>
                             <figcaption class="desc">A Simple Movie Lookup Site</figcaption>
                         </figure>
                     </div>
@@ -130,7 +191,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/tmdb2.PNG">
-                                <img src="img/tmdb2.PNG"></a>
+                                <img src="img/tmdb2.PNG">
+                            </a>
                             <figcaption class="desc">Lookups Implemented using Web API</figcaption>
                         </figure>
                     </div>
@@ -140,7 +202,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="http://akillian.x10host.com/sgt_peppers">
-                                <img src="img/sgt_peppers.JPG"></a>
+                                <img src="img/sgt_peppers.JPG">
+                            </a>
                             <figcaption class="desc">Sgt. Peppers 50th Anniversary. All CSS.</figcaption>
                         </figure>
                     </div>
@@ -148,7 +211,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/bb_tt_page.JPG">
-                                <img src="img/bb_tt_page.JPG"></a>
+                                <img src="img/bb_tt_page.JPG">
+                            </a>
                             <figcaption class="desc">Trouble Ticket App Written with Bootstrap. PHP/MySQL Used for Backend</figcaption>
                         </figure>
                     </div>
@@ -158,7 +222,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/inventory_table.JPG">
-                                <img src="img/re_inventory_table.JPG"></a>
+                                <img src="img/re_inventory_table.JPG">
+                            </a>
                             <figcaption class="desc">Inventory App using PHP w/MySQL.</figcaption>
                         </figure>
                     </div>
@@ -166,7 +231,8 @@
                     <div class="col-6">
                         <figure>
                             <a target="_blank" href="img/tt_table.JPG">
-                                <img src="img/re_tt_table.JPG"></a>
+                                <img src="img/re_tt_table.JPG">
+                            </a>
                             <figcaption class="desc">Trouble Ticket Page Rendered using Bootstrap</figcaption>
                         </figure>
                     </div>
@@ -184,7 +250,7 @@
                         <form action="send_mail.php" method="post">
                             <label for="Name">Name:</label>
                             <input type="text" name="Name" id="Name" placeholder="From" required>
-                            
+
                             <label for="Email">Email:</label>
                             <input type="email" name="Email" id="Email" placeholder="john@example.com" required>
 
@@ -198,7 +264,9 @@
                         </form>
                     </div>
                     <div class="col-8">
-                        <p id="contact_me">If you would like to contact me please fill out the form and submit. I would love to hear from you. Also if you are interested in hiring me or if you have any Web Development questions feel free to contact me.</p>
+                        <p id="contact_me">If you would like to contact me please fill out the form and submit. I would love to hear from you.
+                            Also if you are interested in hiring me or if you have any Web Development questions feel free
+                            to contact me.</p>
                     </div>
                 </div>
             </section>
@@ -210,32 +278,50 @@
         <footer id="footer">
             <h4 class="footer_header">Find Me on the Web</h4>
             <ul id="footer_menu">
-                <li><a href="https://www.linkedin.com/in/akillian" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/alank90" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.twitter.coman"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/akillian" target="_blank">
+                        <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/alank90" target="_blank">
+                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com">
+                        <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.coman">
+                        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                    </a>
+                </li>
             </ul>
         </footer>
 
-    </div>  <!-- End .wrap div -->
+    </div>
+    <!-- End .wrap div -->
 
-       <!-- ====================================================
+    <!-- ====================================================
        ============== Markup for the resume .pdf Modal  ========
        ======= src not set on load because mobile browsers =====
        ======= will load frame even if hidden it seems     =====
        =======================================================-->
 
     <div id="openModal" class="modal">
-      <div> <a href="#close" title="Close" class="close">X</a>
-         <h2>My Resume</h2>
-         <iframe id="iframeDisplay" src=""> </iframe>
-      </div>
-  </div>
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>My Resume</h2>
+            <iframe id="iframeDisplay" src=""> </iframe>
+        </div>
+    </div>
 
-  <!-- ============Javascript Below This Line ==================== -->
-     <script src="js/main.js"></script>
+    <!-- ============Javascript Below This Line ==================== -->
+    <script src="js/main.js"></script>
 
 
- </body>
+</body>
 
 </html>
