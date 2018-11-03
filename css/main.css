@@ -582,7 +582,7 @@ h2  {
         right: 0;
         margin-right: 0;
     }
-
+    
     .divMenu  {
          max-width: 33.33%;
          margin-left: 70vw;
@@ -617,7 +617,7 @@ h2  {
         nav .navName span {
             font-size: .7rem;
         }
-
+        
     pre  {
         font-size: 2rem;
         margin-top: -15vh;
