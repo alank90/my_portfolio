@@ -1,5 +1,5 @@
 <?php
-//Short script to send email to me from form.
+//Short script to send email to me from form...
 $subject=$_POST['Subject'];
 $email=$_POST['Email'];
 $message=$_POST['Message'];
