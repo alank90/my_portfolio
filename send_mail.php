@@ -17,7 +17,8 @@ $to = "akillian@outlook.com";
    echo("<p>Message delivery failed...</p>");
   }
 
-  echo ("<p>Script suspended</>");
+  echo("<p>Script suspended</>");
+  sleep( 15);
  ?>
  
 <!-- Return to My Portfolio -->
