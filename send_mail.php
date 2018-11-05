@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 //Short script to send email to me from form...
 $subject=$_POST['Subject'];
 $email=$_POST['Email'];
@@ -13,7 +16,10 @@ $to = "akillian@outlook.com";
   } else {
    echo("<p>Message delivery failed...</p>");
   }
+
+  echo ("<p>Script suspended</>");
  ?>
  
 <!-- Return to My Portfolio -->
+echo "Script suspended";
 <script>window.location.href = "/";</script>
