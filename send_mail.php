@@ -18,9 +18,9 @@ $to = "akillian@outlook.com";
   }
 
   echo("<p>Script suspended</>");
-  sleep( 15);
+  
  ?>
  
 <!-- Return to My Portfolio -->
 echo "Script suspended";
-<script>window.location.href = "/";</script>
+<!-- <script>window.location.href = "/";</script> -->
