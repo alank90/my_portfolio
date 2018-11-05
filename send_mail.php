@@ -16,4 +16,4 @@ $to = "akillian@outlook.com";
  ?>
  
 <!-- Return to My Portfolio -->
-<script>window.location.href = "/my_portfolio";</script>
+<script>window.location.href = "http://alank.azurewebsites.net/";</script>
