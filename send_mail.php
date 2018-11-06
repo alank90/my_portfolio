@@ -17,10 +17,10 @@ $to = "akillian@outlook.com";
    echo("<p>Message delivery failed...</p>");
   }
 
-  echo("<p>Script suspended</>");
+  echo("<p>Script suspended</p>");
   
  ?>
  
 <!-- Return to My Portfolio -->
-echo "Script suspended";
+
 <!-- <script>window.location.href = "/";</script> -->
