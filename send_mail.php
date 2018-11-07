@@ -11,7 +11,7 @@ $name = str_replace(' ', '', $name);
 $headers = "From: " . $name . "\r\n" . 'Reply-To: ' . $email;
 $to = "akillian@outlook.com";
 
-require_once '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.example.org', 25))
