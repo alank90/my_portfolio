@@ -15,12 +15,11 @@ $to = "akillian@outlook.com";
 $user_name = getenv('APPSETTING_SENDGRID_USERNAME');
 echo $user_name;
 $sendgrid_password = getenv('APPSETTING_SENDGRID_PASSWORD');
-echo $sendgrid_password;
 
-// require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 // Create the Transport
-/* $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
+$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
   ->setUsername($user_name)
   ->setPassword($sendgrid_password)
 ;
@@ -45,7 +44,7 @@ else
 {
   echo "Email Failed. Returning to my page... \n";
   sleep(3);
-} */
+}
 ?>
 
 <!-- Return to My Portfolio -->
