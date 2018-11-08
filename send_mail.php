@@ -6,8 +6,8 @@ ini_set('display_errors', '1');
 $subject=$_POST['Subject'];
 $email=$_POST['Email'];
 $body=$_POST['Message'];
-$name=$_POST['Name'];
-$name = str_replace(' ', '', $name);
+$from=$_POST['Name'];
+$from = str_replace(' ', '', $from);
 $headers = "From: " . $name . "\r\n" . 'Reply-To: ' . $email;
 $to = "akillian@outlook.com";
 
@@ -23,16 +23,25 @@ $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
 $mailer = new Swift_Mailer($transport);
 
 // Create a message
-$message = (new Swift_Message('Wonderful Subject'))
-  ->setFrom(['john@doe.com' => 'John Doe'])
-  ->setTo(['akillian@outlook.com' => 'Alan Killian'])
-  ->setBody('Here is the message itself')
+$message = (new Swift_Message($subject))
+  ->setFrom([$email => $from])
+  ->setTo([$to => 'Alan Killian'])
+  ->setBody($body)
   ;
 // Send the message
-$result = $mailer->send($message);
-
+if ($mailer->send($message))
+{
+  echo "Sent email. Will return to My Portfolio momentarily.\n";
+  // sleep for 3 seconds
+  sleep(3);
+}
+else
+{
+  echo "Email Failed. Returning to my page... \n";
+  sleep(3);
+}
 ?>
 
 <!-- Return to My Portfolio -->
 
-<!-- <script>window.location.href = "/";</script> -->
+<script>window.location.href = "/";</script>
