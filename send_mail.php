@@ -8,7 +8,7 @@ $email=$_POST['Email'];
 $body=$_POST['Message'];
 $from=$_POST['Name'];
 $from = str_replace(' ', '', $from);
-$headers = "From: " . $name . "\r\n" . 'Reply-To: ' . $email;
+$headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
 $to = "akillian@outlook.com";
 
 require_once 'vendor/autoload.php';
