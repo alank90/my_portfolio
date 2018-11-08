@@ -14,7 +14,7 @@ $to = "akillian@outlook.com";
 require_once 'vendor/autoload.php';
 
 // Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.example.org', 25))
+$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
   ->setUsername('azure_8c614a57ee343b9ea0df1807d80bc688@azure.com')
   ->setPassword('SendGrid2017')
 ;
@@ -25,7 +25,7 @@ $mailer = new Swift_Mailer($transport);
 // Create a message
 $message = (new Swift_Message('Wonderful Subject'))
   ->setFrom(['john@doe.com' => 'John Doe'])
-  ->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+  ->setTo(['akillian@outlook.com' => 'Alan Killian'])
   ->setBody('Here is the message itself')
   ;
 // Send the message
