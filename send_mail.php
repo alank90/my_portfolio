@@ -11,12 +11,17 @@ $from = str_replace(' ', '', $from);
 $headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
 $to = "akillian@outlook.com";
 
+// Environment Variables set in Azure Application Settings
+$user_name = getenv('APPSETTING_SENDGRID_USERNAME');
+echo $user_name;
+$sendgrid_password = getenv('APPSETTING_SENDGRID_PASSWORD');
+
 require_once 'vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
-  ->setUsername('azure_8c614a57ee343b9ea0df1807d80bc688@azure.com')
-  ->setPassword('SendGrid2017')
+  ->setUsername($user_name)
+  ->setPassword($sendgrid_password)
 ;
 
 // Create the Mailer using your created Transport
