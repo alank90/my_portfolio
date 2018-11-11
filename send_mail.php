@@ -36,17 +36,17 @@ $message = (new Swift_Message($subject))
 // Send the message
 if ($mailer->send($message))
 {
-  echo "Sent email. Will return to My Portfolio momentarily.\n";
+  echo "Sent email. Will return to My Portfolio momentarily.<br>";
   // sleep for 3 seconds
   sleep(3);
 }
 else
 {
-  echo "Email Failed. Returning to my page... \n";
+  echo "Email Failed. Returning to my page... <br>";
   sleep(3);
 }
 ?>
 
 <!-- Return to My Portfolio -->
 
-<!-- <script>window.location.href = "/";</script> -->
+<script>window.location.href = "/";</script>
