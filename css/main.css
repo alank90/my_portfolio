@@ -486,18 +486,17 @@ ul#footer_menu {
 }
 
 i[class~="fa-linkedin"] {
-  color:  #0077b5;
+  color: #0077b5;
 }
 i[class~="fa-facebook"] {
-  color:  #3b5998;
+  color: #3b5998;
 }
 i[class~="fa-github"] {
-  color:  #000;
+  color: #000;
 }
 i[class~="fa-twitter"] {
-  color:   #55acee;
+  color: #55acee;
 }
-
 
 /* ================================================================================
 ======================== Styling for the .pdf file Modal ==========================
