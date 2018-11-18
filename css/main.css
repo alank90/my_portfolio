@@ -2,8 +2,7 @@
  ==== Main Body Styling =========
 ================================*/
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
@@ -38,6 +37,7 @@ body {
     transform-origin: top;
   }
 }
+
 @keyframes kenburns-top {
   0% {
     -webkit-transform: scale(0.7) translateY(0);
@@ -62,6 +62,7 @@ body {
 =============================================== */
 
 /* Remove margins and padding from the list */
+
 nav {
   font-family: Lato, sans-serif;
   font-weight: 600;
@@ -85,6 +86,7 @@ nav.fill ul li a:hover {
 }
 
 /* Remove margins and padding from the list */
+
 ul.topnav {
   list-style-type: none;
   /*    overflow: hidden;*/
@@ -93,17 +95,18 @@ ul.topnav {
 }
 
 /* Float the list items side by side */
+
 ul.topnav li {
   float: right;
   margin: 15px 20px;
 }
 
 /* Style the links inside the list items */
+
 ul.topnav li a {
   display: inline-block;
   color: #f2f2f2;
   font-family: Alice, sans-serif;
-
   text-decoration: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -130,6 +133,7 @@ ul.topnav li:not(:first-child) a:hover {
 }
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
+
 ul.topnav li.icon {
   display: none;
 }
@@ -156,33 +160,43 @@ nav .navName span {
 nav .navName span:nth-child(1) {
   transition-delay: 200ms;
 }
+
 nav .navName span:nth-child(2) {
   transition-delay: 1300ms;
 }
+
 nav .navName span:nth-child(3) {
   transition-delay: 900ms;
 }
+
 nav .navName span:nth-child(4) {
   transition-delay: 300ms;
 }
+
 nav .navName span:nth-child(5) {
   transition-delay: 800ms;
 }
+
 nav .navName span:nth-child(6) {
   transition-delay: 700ms;
 }
+
 nav .navName span:nth-child(7) {
   transition-delay: 500ms;
 }
+
 nav .navName span:nth-child(8) {
   transition-delay: 1000ms;
 }
+
 nav .navName span:nth-child(9) {
   transition-delay: 800ms;
 }
+
 nav .navName span:nth-child(10) {
   transition-delay: 150ms;
 }
+
 nav .navName span:nth-child(11) {
   transition-delay: 50ms;
 }
@@ -366,8 +380,7 @@ h3 {
   margin-bottom: 25px;
 }
 
-#contact-area input,
-#contact-area textarea {
+#contact-area input, #contact-area textarea {
   padding: 5px;
   width: 100%;
   font-family: Alice, sans-serif;
@@ -377,8 +390,7 @@ h3 {
   border: 2px solid #ccc;
 }
 
-#contact-area textarea:focus,
-#contact-area input:focus {
+#contact-area textarea:focus, #contact-area input:focus {
   border: 2px solid #9f6b3f;
 }
 
@@ -388,13 +400,7 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #9e5b24 0%, #995423 66%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#9e5b24),
-    color-stop(66%, #995423)
-  );
+  background: -webkit-gradient( linear, left top, left bottom, from(#9e5b24), color-stop(66%, #995423));
   background: -o-linear-gradient(top, #9e5b24 0%, #995423 66%);
   background: linear-gradient(to bottom, #9e5b24 0%, #995423 66%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -416,13 +422,7 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#eab92d),
-    color-stop(87%, #9f6b3f)
-  );
+  background: -webkit-gradient( linear, left top, left bottom, from(#eab92d), color-stop(87%, #9f6b3f));
   background: -o-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   background: linear-gradient(to bottom, #eab92d 0%, #9f6b3f 87%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -482,18 +482,22 @@ ul#footer_menu {
 #footer_menu i {
   min-height: 1.2em;
   min-width: 1.2em;
-  position: absolute; /*Prevents other icons from moving on hover */
+  position: absolute;
+  /*Prevents other icons from moving on hover */
 }
 
 i[class~="fa-linkedin"] {
   color: #0077b5;
 }
+
 i[class~="fa-facebook"] {
   color: #3b5998;
 }
+
 i[class~="fa-github"] {
   color: #000;
 }
+
 i[class~="fa-twitter"] {
   color: #55acee;
 }
@@ -527,7 +531,7 @@ i[class~="fa-twitter"] {
   pointer-events: auto;
 }
 
-.modal > div {
+.modal>div {
   height: 88vh;
   width: 88vw;
   position: relative;
@@ -582,21 +586,16 @@ h2 {
   p {
     font-size: 0.9rem;
   }
-
   p#contact_me {
     font-size: 1.1rem;
   }
-
   h3 {
     font-size: 2rem;
   }
-
   label {
     font-size: 1.2rem;
   }
-
-  #contact-area input,
-  #contact-area textarea {
+  #contact-area input, #contact-area textarea {
     font-size: 0.9rem;
   }
 }
@@ -606,6 +605,7 @@ h2 {
 ===================================== */
 
 /*Under 640px hamburger menu is visible only. When click add the .responsive class making menu items visible.*/
+
 @media only screen and (max-width: 640px) {
   ul.topnav li:not(:first-child) {
     display: none;
@@ -617,16 +617,13 @@ h2 {
     right: 0;
     margin-right: 0;
   }
-
   .divMenu {
     max-width: 33.33%;
     margin-left: 70vw;
   }
-
   ul.topnav.responsive {
     margin-top: -10vh;
   }
-
   ul.topnav.responsive li:not(:first-child) {
     display: block;
     font-size: 0.6rem;
@@ -638,12 +635,10 @@ h2 {
     padding: 2vh;
     font-size: 0.7rem;
   }
-
   span#initials {
     font-size: 1.2rem;
     margin-left: -2vw;
   }
-
   .navName {
     margin-top: -10vh;
     width: 33.33%;
@@ -652,12 +647,10 @@ h2 {
   nav .navName span {
     font-size: 0.7rem;
   }
-
   pre {
     font-size: 2rem;
     margin-top: -15vh;
   }
-
   .tooltip-bottom:hover::after {
     padding: 0;
     margin-left: -10vw;
@@ -665,31 +658,28 @@ h2 {
 }
 
 /* When the screen is between 641 and 925 pixels wide, hide all list items, except for the first one (".icon"). Show the list item that contains the link to open and close the topnav (li.icon) */
+
 @media screen and (min-width: 641px) and (max-width: 925px) {
   ul.topnav li:not(:first-child) {
     display: none;
   }
-
   ul.topnav li.icon {
     display: inline-block;
     position: absolute;
     top: 0;
     right: 0;
   }
-
   ul.topnav.responsive li {
     float: none;
     display: inline;
     font-size: 0.7em;
     padding: 0;
   }
-
   ul.topnav.responsive li a {
     display: block;
     text-align: right;
     padding: 0;
   }
-
   span#initials {
     font-size: 1.9rem;
     margin-left: -1vw;
@@ -709,13 +699,11 @@ h2 {
   ul#footer_menu {
     margin-left: 30vw;
   }
-
   h4.footer_header {
     font-size: 1.5rem;
     text-align: center;
     margin: 0;
   }
-
   i.fa-2x {
     font-size: 1.5rem;
   }
