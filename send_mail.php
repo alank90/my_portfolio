@@ -11,17 +11,21 @@ $from = str_replace(' ', '', $from);
 $headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
 $to = "akillian@outlook.com";
 
-// Environment Variables set in Azure Application Settings
-$user_name = getenv('APPSETTING_SENDGRID_USERNAME');
-echo $user_name;
-$sendgrid_password = getenv('APPSETTING_SENDGRID_PASSWORD');
-
+// Important this must come before anything
 require_once 'vendor/autoload.php';
 
+// Environment Variables set in Dotenv Module and then loaded
+// into variables
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+$user_name = $_ENV['user_name'];
+echo $user_name;
+$gmail_password = $_ENV['gmail_password'];
+
 // Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
+$transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
   ->setUsername($user_name)
-  ->setPassword($sendgrid_password)
+  ->setPassword($gmail_password)
 ;
 
 // Create the Mailer using your created Transport
