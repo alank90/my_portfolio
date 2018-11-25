@@ -1,6 +1,5 @@
 {
     "require": {
-        "swiftmailer/swiftmailer": "6.0",
-        "vlucas/phpdotenv": "^2.5"
+        "swiftmailer/swiftmailer": "6.0"
     }
 }
