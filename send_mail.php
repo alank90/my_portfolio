@@ -14,10 +14,6 @@ $to = "akillian@outlook.com";
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-// Environment Variables set in Dotenv Module and then loaded
-// into variables
-/* $dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load(); */
 $user_name = getenv['user_name'];
 echo $user_name;
 $gmail_password = getenv['gmail_password'];
