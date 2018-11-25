@@ -14,9 +14,9 @@ $to = "akillian@outlook.com";
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-$user_name = getenv['user_name'];
+$user_name = getenv('user_name');
 echo $user_name;
-$gmail_password = getenv['gmail_password'];
+$gmail_password = getenv('gmail_password');
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
