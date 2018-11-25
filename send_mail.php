@@ -16,8 +16,8 @@ require_once 'vendor/autoload.php';
 
 // Environment Variables set in Dotenv Module and then loaded
 // into variables
-$dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
+/* $dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load(); */
 $user_name = $_ENV['user_name'];
 echo $user_name;
 $gmail_password = $_ENV['gmail_password'];
