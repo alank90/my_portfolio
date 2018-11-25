@@ -18,9 +18,9 @@ require_once 'vendor/autoload.php';
 // into variables
 /* $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load(); */
-$user_name = $_ENV['user_name'];
+$user_name = getenv['user_name'];
 echo $user_name;
-$gmail_password = $_ENV['gmail_password'];
+$gmail_password = getenv['gmail_password'];
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
