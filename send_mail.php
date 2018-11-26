@@ -14,6 +14,9 @@ $to = "akillian@outlook.com";
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
+putenv("username=phpscheduleit.shs.2014@gmail.com");
+putenv("gmail_password=scarsdale2014");
+
 $user_name = getenv('user_name');
 echo $user_name;
 $gmail_password = getenv('gmail_password');
