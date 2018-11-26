@@ -23,7 +23,7 @@ $gmail_password = getenv('gmail_password');
 echo $gmail_password;
 
 // Create the Transport
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
+$transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
   ->setUsername($user_name)
   ->setPassword($gmail_password)
 ;
