@@ -14,9 +14,6 @@ $to = "akillian@outlook.com";
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-/* putenv("user_name=phpscheduleit.shs.2014@gmail.com");
-putenv("gmail_password=scarsdale2014");
- */
 $user_name = getenv('SENDGRID_USERNAME');
 echo $user_name;
 $sendgrid_password = getenv('SENDGRID_PASSWORD');
