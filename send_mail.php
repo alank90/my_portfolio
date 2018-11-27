@@ -22,13 +22,11 @@ require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // https://github.com/sendgrid/sendgrid-php/releases
 
 $email = new \SendGrid\Mail\Mail(); 
-$email->setFrom("test@example.com", "Example User");
+$email->setFrom($from, "Example User");
 $email->setSubject($subject);
 $email->addTo("test@example.com", "Example User");
-$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-$email->addContent(
-    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-);
+$email->addContent("text/plain", $content);
+
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 try {
     $response = $sendgrid->send($email);
@@ -43,4 +41,4 @@ try {
 
 <!-- Return to My Portfolio -->
 
-<script>window.location.href = "/";</script>
+<!-- <script>window.location.href = "/";</script> -->
