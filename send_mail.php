@@ -22,8 +22,8 @@ require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // https://github.com/sendgrid/sendgrid-php/releases
 
 $email = new \SendGrid\Mail\Mail(); 
-$email->setFrom("test@example.com", "Example User");
-$email->setSubject("Sending with SendGrid is Fun");
+$email->setFrom($from, "Example User");
+$email->setSubject($subject);
 $email->addTo("test@example.com", "Example User");
 $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
 $email->addContent(
