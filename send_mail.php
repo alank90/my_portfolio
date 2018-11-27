@@ -6,13 +6,13 @@ ini_set('display_errors', '1');
 require_once 'vendor/autoload.php';
 
 //Short script to send email to me from form...
-$from = new SendGrid\Email(null,$_POST['Name']);
+$from = new SendGrid\Mail\Mail(null, $_POST['Name']);
 $subject = $_POST['Subject'];
 $to =  new SendGrid\Email(null,"akillian@outlook.com");
 $email=$_POST['Email'];
 $content = new SendGrid\Content("text/plain",$_POST['Message']);
 /* $from = str_replace(' ', '', $from); */
-$mail = new SendGrid\Mail($from, $subject, $to, $content);
+$mail = new SendGrid\Mail\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
