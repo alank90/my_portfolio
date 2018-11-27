@@ -6,11 +6,11 @@ ini_set('display_errors', '1');
 require_once 'vendor/autoload.php';
 
 //Short script to send email to me from form...
-$from = new SendGrid\Mail\Mail(null, $_POST['Name']);
+$from = $_POST['Name'];
 $subject = $_POST['Subject'];
-$to =  new SendGrid\Email(null,"akillian@outlook.com");
-$email=$_POST['Email'];
-$content = new SendGrid\Content("text/plain",$_POST['Message']);
+$to = "akillian@outlook.com";
+$email = $_POST['Email'];
+$content = $_POST['Message'];
 /* $from = str_replace(' ', '', $from); */
 $mail = new SendGrid\Mail\Mail($from, $subject, $to, $content);
 
