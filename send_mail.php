@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 $from = $_POST['Name'];
 $subject = $_POST['Subject'];
 $to = "akillian@outlook.com";
-$email = $_POST['Email'];
+/* $email = $_POST['Email']; */
 $content = $_POST['Message'];
 /* $from = str_replace(' ', '', $from); */
 $mail = new SendGrid\Mail\Mail($from, $subject, $to, $content);
