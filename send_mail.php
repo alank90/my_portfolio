@@ -2,45 +2,55 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
+//Short script to send email to me from form...
+$subject=$_POST['Subject'];
+$email=$_POST['Email'];
+$body=$_POST['Message'];
+$from=$_POST['Name'];
+$from = str_replace(' ', '', $from);
+$headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
+$to = "akillian@outlook.com";
+
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-//Short script to send email to me from form...
-$from = $_POST['Name'];
-$subject = $_POST['Subject'];
-$to = "akillian@outlook.com";
-/* $email = $_POST['Email']; */
-$content = $_POST['Message'];
-/* $from = str_replace(' ', '', $from); */
-require 'vendor/autoload.php'; // If you're using Composer (recommended)
-// Comment out the above line if not using Composer
-// require("<PATH TO>/sendgrid-php.php");
-// If not using Composer, uncomment the above line and
-// download sendgrid-php.zip from the latest release here,
-// replacing <PATH TO> with the path to the sendgrid-php.php file,
-// which is included in the download:
-// https://github.com/sendgrid/sendgrid-php/releases
+/* putenv("user_name=phpscheduleit.shs.2014@gmail.com");
+putenv("gmail_password=scarsdale2014");
+ */
+$user_name = getenv('SENDGRID_USERNAME');
+echo $user_name;
+$sendgrid_password = getenv('SENDGRID_PASSWORD');
+echo $sendgrid_password;
 
-$email = new \SendGrid\Mail\Mail(); 
-$email->setFrom("test@example.com", "Example User");
-$email->setSubject("Sending with SendGrid is Fun");
-$email->addTo("test@example.com", "Example User");
-$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-$email->addContent(
-    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-);
-$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-try {
-    $response = $sendgrid->send($email);
-    print $response->statusCode() . "\n";
-    print_r($response->headers());
-    print $response->body() . "\n";
-} catch (Exception $e) {
-    echo 'Caught exception: '. $e->getMessage() ."\n";
+// Create the Transport
+$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
+  ->setUsername($user_name)
+  ->setPassword($sendgrid_password)
+;
+
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
+
+// Create a message
+$message = (new Swift_Message($subject))
+  ->setFrom([$email => $from])
+  ->setTo([$to => 'Alan Killian'])
+  ->setBody($body)
+  ;
+// Send the message
+if ($mailer->send($message))
+{
+  echo "Sent email. Will return to My Portfolio momentarily.<br>";
+  // sleep for 3 seconds
+  sleep(3);
 }
-
+else
+{
+  echo "Email Failed. Returning to my page... <br>";
+  sleep(3);
+}
 ?>
 
 <!-- Return to My Portfolio -->
 
-<!-- <script>window.location.href = "/";</script> -->
+<script>window.location.href = "/";</script>
