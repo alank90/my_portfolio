@@ -2,53 +2,26 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-//Short script to send email to me from form...
-$subject=$_POST['Subject'];
-$email=$_POST['Email'];
-$body=$_POST['Message'];
-$from=$_POST['Name'];
-$from = str_replace(' ', '', $from);
-$headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
-$to = "akillian@outlook.com";
-
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-/* putenv("user_name=phpscheduleit.shs.2014@gmail.com");
-putenv("gmail_password=scarsdale2014");
- */
-$user_name = getenv('user_name');
-echo $user_name;
-$gmail_password = getenv('gmail_password');
-echo $gmail_password;
+//Short script to send email to me from form...
+$from = new SendGrid\Email(null,$_POST['Name']);
+$subject = $_POST['Subject'];
+$to =  new SendGrid\Email(null,"akillian@outlook.com");
+$email=$_POST['Email'];
+$content = new SendGrid\Content("text/plain",$_POST['Message']);
+/* $from = str_replace(' ', '', $from); */
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-// Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-  ->setUsername($user_name)
-  ->setPassword($gmail_password)
-;
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
 
-// Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
+$response = $sg->client->mail()->send()->post($mail);
+echo $response->statusCode();
+echo $response->headers();
+echo $response->body();
 
-// Create a message
-$message = (new Swift_Message($subject))
-  ->setFrom([$email => $from])
-  ->setTo([$to => 'Alan Killian'])
-  ->setBody($body)
-  ;
-// Send the message
-if ($mailer->send($message))
-{
-  echo "Sent email. Will return to My Portfolio momentarily.<br>";
-  // sleep for 3 seconds
-  sleep(3);
-}
-else
-{
-  echo "Email Failed. Returning to my page... <br>";
-  sleep(3);
-}
 ?>
 
 <!-- Return to My Portfolio -->
