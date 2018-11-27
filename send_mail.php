@@ -22,7 +22,7 @@ require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // https://github.com/sendgrid/sendgrid-php/releases
 
 $email = new \SendGrid\Mail\Mail(); 
-$email->setFrom($from, "Example User");
+$email->setFrom("$from", "Example User");
 $email->setSubject($subject);
 $email->addTo("test@example.com", "Example User");
 $email->addContent("text/plain", $content);
