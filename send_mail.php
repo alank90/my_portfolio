@@ -17,6 +17,7 @@ require_once 'vendor/autoload.php';
 $sendgrid_username = getenv('SENDGRID_USERNAME');
 $sendgrid_password = getenv('SENDGRID_PASSWORD');
 echo $sendgrid_password;
+echo $sendgrid_password;
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
