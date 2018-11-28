@@ -14,14 +14,13 @@ $to = "akillian@outlook.com";
 // Important this must come before anything
 require_once 'vendor/autoload.php';
 
-$user_name = getenv('SENDGRID_USERNAME');
-echo $user_name;
+$sendgrid_username = getenv('SENDGRID_USERNAME');
 $sendgrid_password = getenv('SENDGRID_PASSWORD');
 echo $sendgrid_password;
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
-  ->setUsername($user_name)
+  ->setUsername($sendgrid_username)
   ->setPassword($sendgrid_password)
 ;
 
