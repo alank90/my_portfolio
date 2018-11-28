@@ -15,13 +15,11 @@ $to = "akillian@outlook.com";
 require_once 'vendor/autoload.php';
 
 // Note - Env variables stored on heroku app instance in config variables
-// if you want to test mail method locally will need to use php putenv()
-// to set SENDGRID_USERNAME & SENDGRID_PASSWORD env variables locally
+// set from heroku dashboard. If you want to test mail method locally will 
+// need to use php putenv() to set SENDGRID_USERNAME & SENDGRID_PASSWORD 
+// env variables locally
 $sendgrid_username = getenv('SENDGRID_USERNAME');
 $sendgrid_password = getenv('SENDGRID_PASSWORD');
-echo $sendgrid_password;
-echo $sendgrid_password;
-
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
