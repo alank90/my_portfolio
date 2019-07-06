@@ -2,7 +2,8 @@
  ==== Main Body Styling =========
 ================================*/
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -333,31 +334,84 @@ span.section_header {
   font-size: 0.6em;
 }
 
-/* =================================================
-====== End of Main Title,Paragragh etc Stylings ====
-================================================= */
+/* ========= End Main Title,Paragragh etc Stylings ============= */
 
-/* =====================================
-===== Styling for Portfolio Images =====
-====================================== */
+/* ======== Styling for Carousel  ================================== */
 
-figure.img:hover {
-  border: 2px solid #9f6b3f;
+div#carousel {
+  perspective: 1200px;
+  padding-top: 5%;
+  font-size: 0;
+  margin-bottom: 3rem;
 }
 
-figure.img:last-child {
-  margin-bottom: 20px;
+figure#spinner {
+  transform-style: preserve-3d;
+  height: 300px;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50% -400px;
+  transition: 1s;
 }
 
-#portfolio figure:nth-child(odd) {
-  margin-left: 20%;
+figure#spinner figure {
+  width: 20%;
+  max-width: 500px;
+  position: absolute;
+  left: 40%;
+  transform-origin: 50% 50% -400px;
+  outline: 1px solid transparent;
+  overflow: hidden;
+  transition: 1s;
 }
 
-figcaption.desc {
-  font-family: Alice, serif;
-  background-color: rgba(187, 187, 187, 0.5);
-  padding: 15px;
-  text-align: center;
+figure#spinner figure.focus {
+  width: 26%;
+  left: 37%;
+  margin-top: -3rem;
+}
+
+figure#spinner figure img {
+  width: 100%;
+}
+
+figcaption {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 0.3rem;
+  z-index: 2;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.6s;
+}
+
+figure#spinner figure.current:hover figcaption,
+figure#spinner figure.current.caption figcaption {
+  top: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+}
+
+div#carousel ~ span {
+  color: #fff;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -6rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#carousel ~ span:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.ss-icon {
+  transform: scale(2);
 }
 
 #contact_area {
@@ -370,17 +424,16 @@ h3 {
   margin: 30px;
   width: 75%;
 }
+/* ========= End Carousel Stylings ====================== */
 
-/* ==========================================
-=======  Styling for the Contact and Form
-=======  area  ==============================
-========================================== */
+/* ==== Styling for the Contact and Form area  ============== */
 
 #contact-area {
   margin-bottom: 25px;
 }
 
-#contact-area input, #contact-area textarea {
+#contact-area input,
+#contact-area textarea {
   padding: 5px;
   width: 100%;
   font-family: Alice, sans-serif;
@@ -390,7 +443,8 @@ h3 {
   border: 2px solid #ccc;
 }
 
-#contact-area textarea:focus, #contact-area input:focus {
+#contact-area textarea:focus,
+#contact-area input:focus {
   border: 2px solid #9f6b3f;
 }
 
@@ -400,7 +454,13 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #9e5b24 0%, #995423 66%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient( linear, left top, left bottom, from(#9e5b24), color-stop(66%, #995423));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9e5b24),
+    color-stop(66%, #995423)
+  );
   background: -o-linear-gradient(top, #9e5b24 0%, #995423 66%);
   background: linear-gradient(to bottom, #9e5b24 0%, #995423 66%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -422,7 +482,13 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient( linear, left top, left bottom, from(#eab92d), color-stop(87%, #9f6b3f));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eab92d),
+    color-stop(87%, #9f6b3f)
+  );
   background: -o-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   background: linear-gradient(to bottom, #eab92d 0%, #9f6b3f 87%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -531,7 +597,7 @@ i[class~="fa-twitter"] {
   pointer-events: auto;
 }
 
-.modal>div {
+.modal > div {
   height: 88vh;
   width: 88vw;
   position: relative;
@@ -595,7 +661,8 @@ h2 {
   label {
     font-size: 1.2rem;
   }
-  #contact-area input, #contact-area textarea {
+  #contact-area input,
+  #contact-area textarea {
     font-size: 0.9rem;
   }
 }
