@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3d Carousel</title>
+
+    <style>
+      div#scene {
+        perspective: 1200px;
+        padding-top: 5%;
+        font-size: 0;
+        margin-bottom: 3rem;
+        border: 3px solid black;
+      }
+
+      figure#carousel {
+        transform-style: preserve-3d;
+        height: 300px;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50% -400px;
+        transition: all 1s;
+        border: 2px solid red;
+      }
+
+      figure#carousel figure {
+        width: 20%;
+        max-width: 500px;
+        position: absolute;
+        left: 40%;
+        transform-origin: 50% 50% -400px;
+        outline: 1px solid transparent;
+        overflow: hidden;
+        transition: 1s;
+      }
+
+      figure#carousel figure.focus {
+        width: 26%;
+        left: 37%;
+        margin-top: -3rem;
+      }
+
+      figure#carousel figure img {
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        padding: 0.3rem;
+        z-index: 2;
+        font-size: 1.1rem;
+        background: rgba(0, 0, 0, 0.7);
+        transition: 0.6s;
+      }
+
+      figure#carousel figure.current:hover figcaption,
+      figure#carousel figure.current.caption figcaption {
+        top: 70%;
+        font-size: 0.8rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: whitesmoke;
+        bottom: 0;
+      }
+
+      div#scene ~ span {
+        color: rgb(41, 6, 6);
+        margin: 5%;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        transition: 0.6s color;
+        position: relative;
+        margin-top: -6rem;
+        border-bottom: none;
+        line-height: 0;
+      }
+
+      div#scene ~ span:hover {
+        color: #888;
+        cursor: pointer;
+      }
+
+      .ss-icon {
+        transform: scale(2);
+      }
+
+      p.carousel-controls {
+        text-align: center;
+        font-size: 1.4rem;
+      }
+
+      #contact_area {
+        clear: both;
+      }
+
+      h3 {
+        font-size: 46px;
+        color: #9f6b3f;
+        margin: 30px;
+        width: 75%;
+      }
+
+      /*  @media only screen and (min-width: 1200px) {
+        div#scene {
+          transform: scale3d(1.6, 1.6, 1);
+          
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="scene">
+      <figure id="carousel">
+        <figure>
+          <a target="_blank" href="http://nasaplanets.surge.sh">
+            <img src="img/nasaplanets.PNG" alt="NASA Planets App" />
+          </a>
+          <figcaption class="desc">
+            Created with Vue.js, Vue Router, and a sprinkle of Plain Vanilla JS.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="http://sports-scores.surge.sh//">
+            <img src="img/sports_scores.JPG" alt="Sports Scores" />
+          </a>
+          <figcaption class="desc">
+            Created with Vue.js, Node, and a little love.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="img/landing_page.JPG">
+            <img src="img/landing_page.JPG" alt="Sports Scores Landing" />
+          </a>
+          <figcaption class="desc">Landing Page</figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="https://expresschart.herokuapp.com/">
+            <img src="img/chart_img_small.png" alt="Express Chart Shot" />
+          </a>
+          <figcaption class="desc">Express Chart. Web App</figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="img/chartII.PNG">
+            <img src="img/chartII.PNG" alt="Chart.js Screenshot" />
+          </a>
+          <figcaption class="desc">
+            Created with Chart.js, Node and built w/Browserify
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="http://akillian.x10host.com/modestmouse/">
+            <img src="img/modest_mouse_page.JPG" alt="Modest Mouse Site" />
+          </a>
+          <figcaption class="desc">
+            Modest Mouse. No Carousel Plugin Used.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="http://moviescoop.surge.sh/">
+            <img
+              src="img/movie_scoop_landing.JPG"
+              alt="Movie Scoop Landing Page"
+            />
+          </a>
+          <figcaption class="desc">
+            Get The Facts on Your favorite Movies and Actors
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a target="_blank" href="http://sgtpeppers.surge.sh">
+            <img src="img/sgt_peppers.JPG" alt="Sgt. Peppers Site" />
+          </a>
+          <figcaption class="desc">
+            Sgt. Peppers 50th Anniversary. All CSS.
+          </figcaption>
+        </figure>
+      </figure>
+    </div>
+    <!-- ===  End carousel === -->
+
+    <span style="float:left" class="ss-icon" onclick="galleryspin('-')"
+      >&lt;</span
+    >
+    <span style="float:right" class="ss-icon" onclick="galleryspin('')"
+      >&gt;</span
+    >
+    <p class="carousel-controls">
+      Controls: cursor left and right or click on arrows to rotate,
+      <b>Z</b> or click to toggle zoom on foreground image, <b>C</b> or hover to
+      show/hide caption.
+    </p>
+
+    <!-- ============== Javascript Below this Line ============== -->
+    <script>
+      // forEach method
+      var forEach = function(array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+          callback.call(scope, i, array[i]);
+        }
+      };
+
+      var carousel = document.querySelector("#carousel"),
+        angle = 0,
+        images = document.querySelectorAll("#carousel figure"),
+        numpics = images.length,
+        degInt = 360 / numpics,
+        start = 0,
+        current = 1;
+
+      forEach(images, function(index, value) {
+        images[index].style.webkitTransform = "rotateY(-" + start + "deg)";
+        images[index].style.transform = "rotateY(-" + start + "deg)";
+        images[index].addEventListener("click", function() {
+          if (this.classList.contains("current")) {
+            this.classList.toggle("focus");
+          }
+        });
+        start = start + degInt;
+      });
+
+      function setCurrent(current) {
+        document
+          .querySelector("figure#carousel figure:nth-child(" + current + ")")
+          .classList.add("current");
+      }
+
+      function galleryspin(sign) {
+        forEach(images, function(index, value) {
+          images[index].classList.remove("current");
+          images[index].classList.remove("focus");
+          images[index].classList.remove("caption");
+        });
+
+        if (!sign) {
+          angle = angle + degInt;
+          current = current + 1;
+          if (current > numpics) {
+            current = 1;
+          }
+        } else {
+          angle = angle - degInt;
+          current = current - 1;
+          if (current == 0) {
+            current = numpics;
+          }
+        }
+
+        carousel.setAttribute(
+          "style",
+          "-webkit-transform: rotateY(" +
+            angle +
+            "deg); transform: rotateY(" +
+            angle +
+            "deg)"
+        );
+        setCurrent(current);
+      }
+
+      document.body.onkeydown = function(e) {
+        switch (e.which) {
+          case 37: // left cursor
+            galleryspin("-");
+            break;
+
+          case 39: // right cursor
+            galleryspin("");
+            break;
+
+          case 90: // Z - zoom image in forefront image
+            document
+              .querySelector("figure#carousel figure.current")
+              .classList.toggle("focus");
+            break;
+
+          case 67: // C - show caption for forefront image
+            document
+              .querySelector("figure#carousel figure.current")
+              .classList.toggle("caption");
+            break;
+
+          default:
+            return; // exit this handler for other keys
+        }
+        e.preventDefault();
+      };
+
+      setCurrent(1);
+    </script>
+  </body>
+</html>
