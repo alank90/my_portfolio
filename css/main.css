@@ -14,10 +14,6 @@ body {
   font-style: normal;
 }
 
-#wrap {
-  min-height: 100%;
-}
-
 /**
  * ========================================
  * animation kenburns-top
@@ -65,11 +61,14 @@ body {
 /* Remove margins and padding from the list */
 
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   font-family: Lato, sans-serif;
   font-weight: 600;
   font-style: normal;
   background-color: rgba(53, 53, 53, 0.7);
-  height: 120px;
+  height: 10%;
   margin: 0;
   padding: 0;
 }
@@ -90,7 +89,6 @@ nav.fill ul li a:hover {
 
 ul.topnav {
   list-style-type: none;
-  /*    overflow: hidden;*/
   margin: 0;
   padding: 0;
 }
@@ -111,7 +109,7 @@ ul.topnav li a {
   text-decoration: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s;
+  transition: 1s;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -122,11 +120,24 @@ ul.topnav li:not(:first-child) a:hover {
 }*/
 
 .divMenu {
-  margin-top: 25px;
+  margin: 55px 15px;
+}
+
+#myTopNav {
+  display: flex;
+  /* flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end; */
+  margin: 45px 10px;
+}
+
+img[src="img/menuFilled.png"] {
+  margin: 15px 5px;
+  background-color: snow;
 }
 
 .initials {
-  margin-top: 25px;
+  margin: 45px 15px;
 }
 
 .navName {
@@ -338,22 +349,22 @@ span.section_header {
 
 /* ======== Styling for Carousel  ================================== */
 
-div#carousel {
+div#scene {
   perspective: 1200px;
   padding-top: 5%;
   font-size: 0;
   margin-bottom: 3rem;
 }
 
-figure#spinner {
+figure#carousel {
   transform-style: preserve-3d;
   height: 300px;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50% -400px;
-  transition: 1s;
+  transition: all 1s;
 }
 
-figure#spinner figure {
+figure#carousel figure {
   width: 20%;
   max-width: 500px;
   position: absolute;
@@ -364,13 +375,13 @@ figure#spinner figure {
   transition: 1s;
 }
 
-figure#spinner figure.focus {
+figure#carousel figure.focus {
   width: 26%;
   left: 37%;
   margin-top: -3rem;
 }
 
-figure#spinner figure img {
+figure#carousel figure img {
   width: 100%;
 }
 
@@ -381,19 +392,21 @@ figcaption {
   padding: 0.3rem;
   z-index: 2;
   font-size: 1.1rem;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
   transition: 0.6s;
 }
 
-figure#spinner figure.current:hover figcaption,
-figure#spinner figure.current.caption figcaption {
-  top: 90%;
+figure#carousel figure.current:hover figcaption,
+figure#carousel figure.current.caption figcaption {
+  top: 70%;
+  font-size: 0.8rem;
   background: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
   bottom: 0;
 }
 
-div#carousel ~ span {
-  color: #fff;
+div#scene ~ span {
+  color: rgb(41, 6, 6);
   margin: 5%;
   display: inline-block;
   text-decoration: none;
@@ -405,13 +418,20 @@ div#carousel ~ span {
   line-height: 0;
 }
 
-div#carousel ~ span:hover {
+div#scene ~ span:hover {
   color: #888;
   cursor: pointer;
 }
 
 .ss-icon {
   transform: scale(2);
+}
+
+p.carousel-controls {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 70%;
+  margin: -8% auto 0;
 }
 
 #contact_area {
@@ -523,33 +543,28 @@ label {
 }
 
 h4 {
-  margin-left: 40%;
+  text-align: center;
   font-family: Alice, sans-serif;
   font-size: 38px;
-  margin-top: 5px;
-}
-
-#footer_menu i:hover:before {
-  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 ul#footer_menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
   list-style-type: none;
-  margin-left: 40%;
-}
-
-#footer_menu li {
-  display: inline-block;
-  margin: 5px 10px;
-  width: 7vw;
-  height: 7vh;
 }
 
 #footer_menu i {
-  min-height: 1.2em;
-  min-width: 1.2em;
-  position: absolute;
-  /*Prevents other icons from moving on hover */
+  margin-top: 20px;
+  transform: scale(1.4);
+  transition: transform 0.7s ease;
+}
+
+#footer_menu i:hover {
+  transform: scale(1.9);
 }
 
 i[class~="fa-linkedin"] {
@@ -689,7 +704,9 @@ h2 {
     margin-left: 70vw;
   }
   ul.topnav.responsive {
-    margin-top: -10vh;
+    margin-top: -75px;
+    margin-left: 70px;
+    width: 100px;
   }
   ul.topnav.responsive li:not(:first-child) {
     display: block;
@@ -760,18 +777,3 @@ h2 {
   }
 }
 
-/* Media Queries for Footer */
-
-@media screen and (max-width: 640px) {
-  ul#footer_menu {
-    margin-left: 30vw;
-  }
-  h4.footer_header {
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 0;
-  }
-  i.fa-2x {
-    font-size: 1.5rem;
-  }
-}

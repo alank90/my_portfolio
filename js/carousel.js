@@ -5,9 +5,9 @@ var forEach = function(array, callback, scope) {
   }
 };
 
-var spinner = document.querySelector("#spinner"),
+var carousel = document.querySelector("#carousel"),
   angle = 0,
-  images = document.querySelectorAll("#spinner figure"),
+  images = document.querySelectorAll("#carousel figure"),
   numpics = images.length,
   degInt = 360 / numpics,
   start = 0,
@@ -26,7 +26,7 @@ forEach(images, function(index, value) {
 
 function setCurrent(current) {
   document
-    .querySelector("figure#spinner figure:nth-child(" + current + ")")
+    .querySelector("figure#carousel figure:nth-child(" + current + ")")
     .classList.add("current");
 }
 
@@ -51,7 +51,7 @@ function galleryspin(sign) {
     }
   }
 
-  spinner.setAttribute(
+  carousel.setAttribute(
     "style",
     "-webkit-transform: rotateY(" +
       angle +
@@ -74,13 +74,13 @@ document.body.onkeydown = function(e) {
 
     case 90: // Z - zoom image in forefront image
       document
-        .querySelector("figure#spinner figure.current")
+        .querySelector("figure#carousel figure.current")
         .classList.toggle("focus");
       break;
 
     case 67: // C - show caption for forefront image
       document
-        .querySelector("figure#spinner figure.current")
+        .querySelector("figure#carousel figure.current")
         .classList.toggle("caption");
       break;
 
