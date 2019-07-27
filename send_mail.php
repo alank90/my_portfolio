@@ -16,9 +16,10 @@ try {
     // set from heroku dashboard. If you want to test mail method locally will
     // need to use php putenv() to set SENDGRID_USERNAME & SENDGRID_PASSWORD
     // env variables locally
+    
     $sendgrid_username = getenv('SENDGRID_USERNAME');
     $sendgrid_password = getenv('SENDGRID_PASSWORD');
-
+    
 // Create the Transport
     $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
         ->setUsername($sendgrid_username)
