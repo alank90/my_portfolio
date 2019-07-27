@@ -24,7 +24,7 @@ if (window.matchMedia("(max-width: 800px)").matches) {
   var anchorElement = document.querySelector(".classInitials");
   anchorElement.setAttribute("href", "doc/resume.pdf");
   // Create and set a target attribute
-  anchorElement.createAttribute("target");
+  // anchorElement.createAttribute("target");
   anchorElement.setAttribute("target", "_blank");
 } else {
   /* the viewport is greater than 800 pixels wide

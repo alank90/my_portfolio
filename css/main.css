@@ -2,7 +2,8 @@
  ==== Main Body Styling =========
 ================================*/
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -11,10 +12,6 @@ body {
   font-family: lato, sans-serif;
   font-weight: 500;
   font-style: normal;
-}
-
-#wrap {
-  min-height: 100%;
 }
 
 /**
@@ -64,11 +61,14 @@ body {
 /* Remove margins and padding from the list */
 
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   font-family: Lato, sans-serif;
   font-weight: 600;
   font-style: normal;
   background-color: rgba(53, 53, 53, 0.7);
-  height: 120px;
+  height: 10%;
   margin: 0;
   padding: 0;
 }
@@ -89,7 +89,6 @@ nav.fill ul li a:hover {
 
 ul.topnav {
   list-style-type: none;
-  /*    overflow: hidden;*/
   margin: 0;
   padding: 0;
 }
@@ -110,7 +109,7 @@ ul.topnav li a {
   text-decoration: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s;
+  transition: 1s;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -121,11 +120,24 @@ ul.topnav li:not(:first-child) a:hover {
 }*/
 
 .divMenu {
-  margin-top: 25px;
+  margin: 55px 15px;
+}
+
+#myTopNav {
+  display: flex;
+  /* flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end; */
+  margin: 45px 10px;
+}
+
+img[src="img/menuFilled.png"] {
+  margin: 15px 5px;
+  background-color: snow;
 }
 
 .initials {
-  margin-top: 25px;
+  margin: 45px 15px;
 }
 
 .navName {
@@ -333,31 +345,93 @@ span.section_header {
   font-size: 0.6em;
 }
 
-/* =================================================
-====== End of Main Title,Paragragh etc Stylings ====
-================================================= */
+/* ========= End Main Title,Paragragh etc Stylings ============= */
 
-/* =====================================
-===== Styling for Portfolio Images =====
-====================================== */
+/* ======== Styling for Carousel  ================================== */
 
-figure.img:hover {
-  border: 2px solid #9f6b3f;
+div#scene {
+  perspective: 1200px;
+  padding-top: 5%;
+  font-size: 0;
+  margin-bottom: 3rem;
 }
 
-figure.img:last-child {
-  margin-bottom: 20px;
+figure#carousel {
+  transform-style: preserve-3d;
+  height: 300px;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50% -400px;
+  transition: all 1s;
 }
 
-#portfolio figure:nth-child(odd) {
-  margin-left: 20%;
+figure#carousel figure {
+  width: 20%;
+  max-width: 500px;
+  position: absolute;
+  left: 40%;
+  transform-origin: 50% 50% -400px;
+  outline: 1px solid transparent;
+  overflow: hidden;
+  transition: 1s;
 }
 
-figcaption.desc {
-  font-family: Alice, serif;
-  background-color: rgba(187, 187, 187, 0.5);
-  padding: 15px;
+figure#carousel figure.focus {
+  width: 26%;
+  left: 37%;
+  margin-top: -3rem;
+}
+
+figure#carousel figure img {
+  width: 100%;
+}
+
+figcaption {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 0.3rem;
+  z-index: 2;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.6s;
+}
+
+figure#carousel figure.current:hover figcaption,
+figure#carousel figure.current.caption figcaption {
+  top: 70%;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  bottom: 0;
+}
+
+div#scene ~ span {
+  color: rgb(41, 6, 6);
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -6rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#scene ~ span:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.ss-icon {
+  transform: scale(2);
+}
+
+p.carousel-controls {
   text-align: center;
+  font-size: 1.2rem;
+  width: 70%;
+  margin: -8% auto 0;
 }
 
 #contact_area {
@@ -370,17 +444,16 @@ h3 {
   margin: 30px;
   width: 75%;
 }
+/* ========= End Carousel Stylings ====================== */
 
-/* ==========================================
-=======  Styling for the Contact and Form
-=======  area  ==============================
-========================================== */
+/* ==== Styling for the Contact and Form area  ============== */
 
 #contact-area {
   margin-bottom: 25px;
 }
 
-#contact-area input, #contact-area textarea {
+#contact-area input,
+#contact-area textarea {
   padding: 5px;
   width: 100%;
   font-family: Alice, sans-serif;
@@ -390,7 +463,8 @@ h3 {
   border: 2px solid #ccc;
 }
 
-#contact-area textarea:focus, #contact-area input:focus {
+#contact-area textarea:focus,
+#contact-area input:focus {
   border: 2px solid #9f6b3f;
 }
 
@@ -400,7 +474,13 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #9e5b24 0%, #995423 66%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient( linear, left top, left bottom, from(#9e5b24), color-stop(66%, #995423));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9e5b24),
+    color-stop(66%, #995423)
+  );
   background: -o-linear-gradient(top, #9e5b24 0%, #995423 66%);
   background: linear-gradient(to bottom, #9e5b24 0%, #995423 66%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -422,7 +502,13 @@ h3 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient( linear, left top, left bottom, from(#eab92d), color-stop(87%, #9f6b3f));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eab92d),
+    color-stop(87%, #9f6b3f)
+  );
   background: -o-linear-gradient(top, #eab92d 0%, #9f6b3f 87%);
   background: linear-gradient(to bottom, #eab92d 0%, #9f6b3f 87%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -457,33 +543,28 @@ label {
 }
 
 h4 {
-  margin-left: 40%;
+  text-align: center;
   font-family: Alice, sans-serif;
   font-size: 38px;
-  margin-top: 5px;
-}
-
-#footer_menu i:hover:before {
-  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 ul#footer_menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
   list-style-type: none;
-  margin-left: 40%;
-}
-
-#footer_menu li {
-  display: inline-block;
-  margin: 5px 10px;
-  width: 7vw;
-  height: 7vh;
 }
 
 #footer_menu i {
-  min-height: 1.2em;
-  min-width: 1.2em;
-  position: absolute;
-  /*Prevents other icons from moving on hover */
+  margin-top: 20px;
+  transform: scale(1.4);
+  transition: transform 0.7s ease;
+}
+
+#footer_menu i:hover {
+  transform: scale(1.9);
 }
 
 i[class~="fa-linkedin"] {
@@ -531,7 +612,7 @@ i[class~="fa-twitter"] {
   pointer-events: auto;
 }
 
-.modal>div {
+.modal > div {
   height: 88vh;
   width: 88vw;
   position: relative;
@@ -595,7 +676,8 @@ h2 {
   label {
     font-size: 1.2rem;
   }
-  #contact-area input, #contact-area textarea {
+  #contact-area input,
+  #contact-area textarea {
     font-size: 0.9rem;
   }
 }
@@ -622,7 +704,9 @@ h2 {
     margin-left: 70vw;
   }
   ul.topnav.responsive {
-    margin-top: -10vh;
+    margin-top: -75px;
+    margin-left: 70px;
+    width: 100px;
   }
   ul.topnav.responsive li:not(:first-child) {
     display: block;
@@ -693,18 +777,3 @@ h2 {
   }
 }
 
-/* Media Queries for Footer */
-
-@media screen and (max-width: 640px) {
-  ul#footer_menu {
-    margin-left: 30vw;
-  }
-  h4.footer_header {
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 0;
-  }
-  i.fa-2x {
-    font-size: 1.5rem;
-  }
-}

@@ -1,5 +1,8 @@
 {
-    "require": {
-        "swiftmailer/swiftmailer": "6.0"
-    }
+  "name": "akillian-portfolio",
+  "description": "My Portfolio Site",
+  "require": {
+    "swiftmailer/swiftmailer": "6.0",
+    "sendgrid/sendgrid": "~7"
+  }
 }

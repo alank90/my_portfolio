@@ -1,53 +1,46 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
+try {
 //Short script to send email to me from form...
-$subject=$_POST['Subject'];
-$email=$_POST['Email'];
-$body=$_POST['Message'];
-$from=$_POST['Name'];
-$from = str_replace(' ', '', $from);
-$headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
-$to = "akillian@outlook.com";
+    $subject = $_POST['Subject'];
+    $email = $_POST['Email'];
+    $body = $_POST['Message'];
+    $from = $_POST['Name'];
+    $from = str_replace(' ', '', $from);
+    $headers = "From: " . $from . "\r\n" . 'Reply-To: ' . $email;
+    $to = "akillian@outlook.com";
 
 // Important this must come before anything
-require_once 'vendor/autoload.php';
+    require_once 'vendor/autoload.php';
 
-/* putenv("user_name=phpscheduleit.shs.2014@gmail.com");
-putenv("gmail_password=scarsdale2014");
- */
-$user_name = getenv('user_name');
-echo $user_name;
-$gmail_password = getenv('gmail_password');
-echo $gmail_password;
+// Note - Env variables stored on heroku app instance in config variables
+    // set from heroku dashboard. If you want to test mail method locally will
+    // need to use php putenv() to set SENDGRID_USERNAME & SENDGRID_PASSWORD
+    // env variables locally
+    $sendgrid_username = getenv('SENDGRID_USERNAME');
+    $sendgrid_password = getenv('SENDGRID_PASSWORD');
 
 // Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-  ->setUsername($user_name)
-  ->setPassword($gmail_password)
-;
+    $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
+        ->setUsername($sendgrid_username)
+        ->setPassword($sendgrid_password)
+    ;
 
 // Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
+    $mailer = new Swift_Mailer($transport);
 
 // Create a message
-$message = (new Swift_Message($subject))
-  ->setFrom([$email => $from])
-  ->setTo([$to => 'Alan Killian'])
-  ->setBody($body)
-  ;
+    $message = (new Swift_Message($subject))
+        ->setFrom([$email => $from])
+        ->setTo([$to => 'Alan Killian'])
+        ->setBody($body)
+    ;
 // Send the message
-if ($mailer->send($message))
-{
-  echo "Sent email. Will return to My Portfolio momentarily.<br>";
-  // sleep for 3 seconds
-  sleep(3);
-}
-else
-{
-  echo "Email Failed. Returning to my page... <br>";
-  sleep(3);
+    $mailer->send($message);
+    echo "Sent email. Will return to My Portfolio momentarily.<br>";
+
+} // End Try
+ catch (Exception $e) {
+    echo 'Caught exception: ', $e->getMessage(), "\n";
 }
 ?>
 

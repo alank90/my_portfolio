@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <div id="wrap">
+    
       <!--
         =========================================
         ======== Main Body Markup for Page  =========
@@ -50,34 +50,33 @@
         -->
 
         <nav class="fill">
-          <div class="row">
-            <div class="col-m-2 col-2 initials">
-              <span
-                class="tooltip-bottom"
-                id="initials"
-                data-tooltip="Click to see my Resume"
-              >
-                <a class="classInitials" href="#openModal">AK</a>
-              </span>
-            </div>
-            <div class="col-m-4 col-4 navName">
-              <span>A</span> <span>L</span> <span>A</span> <span>N</span>&nbsp;
-              <span>K</span> <span>I</span> <span>L</span> <span>L</span>
-              <span>I</span> <span>A</span> <span>N</span>
-            </div>
-            <div class="col-m-6 col-6 divMenu">
-              <ul id="myTopnav" class="topnav">
-                <li class="icon">
-                  <a href="#"> <img src="img/menuFilled.png" alt="Menu" /> </a>
-                </li>
-                <li><a href="#contact-area">CONTACT</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#about">ABOUT</a></li>
-              </ul>
-            </div>
+          <div class="initials">
+            <span
+              class="tooltip-bottom"
+              id="initials"
+              data-tooltip="Click to see my Resume"
+            >
+              <a class="classInitials" href="#openModal">AK</a>
+            </span>
           </div>
-          <!-- End Row -->
+          <div class="navName">
+            <span>A</span> <span>L</span> <span>A</span> <span>N</span>&nbsp;&nbsp;&nbsp;
+            <span>K</span> <span>I</span> <span>L</span> <span>L</span>
+            <span>I</span> <span>A</span> <span>N</span>
+          </div>
+          <div class="divMenu">
+            <ul id="myTopnav" class="topnav">
+              <li class="icon">
+                <a href="#"> <img src="img/menuFilled.png" alt="Menu" /> </a>
+              </li>
+              <li><a href="#contact-area">CONTACT</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#about">ABOUT</a></li>
+            </ul>
+            </div>
+          
         </nav>
+        <!-- End Flex group -->
 
         <section id="main_title">
           <div class="row">
@@ -129,169 +128,98 @@
         <section id="portfolio" role="region">
           <h3>Portfolio</h3>
 
-          <div class="row">
-            <div class="col-6">
+          <!-- =================== Carousel Markup Here ===================== -->
+          <div id="scene">
+            <figure id="carousel">
+              <figure>
+                <a target="_blank" href="http://nasaplanets.surge.sh">
+                  <img src="img/nasaplanets.PNG" alt="NASA Planets App" />
+                </a>
+                <figcaption class="desc">
+                  Created with Vue.js, Vue Router, and a sprinkle of Plain
+                  Vanilla JS.
+                </figcaption>
+              </figure>
+
               <figure>
                 <a target="_blank" href="http://sports-scores.surge.sh//">
-                  <img src="img/sports_scores.JPG" />
+                  <img src="img/sports_scores.JPG" alt="Sports Scores" />
                 </a>
                 <figcaption class="desc">
                   Created with Vue.js, Node, and a little love.
                 </figcaption>
               </figure>
-            </div>
 
-            <div class="col-6">
               <figure>
                 <a target="_blank" href="img/landing_page.JPG">
-                  <img src="img/landing_page.JPG" />
+                  <img src="img/landing_page.JPG" alt="Sports Scores Landing" />
                 </a>
                 <figcaption class="desc">Landing Page</figcaption>
               </figure>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-6">
               <figure>
                 <a target="_blank" href="https://expresschart.herokuapp.com/">
-                  <img src="img/chart_img_small.png" />
+                  <img src="img/chart_img_small.png" alt="Express Chart Shot" />
                 </a>
                 <figcaption class="desc">Express Chart. Web App</figcaption>
               </figure>
-            </div>
 
-            <div class="col-6">
               <figure>
                 <a target="_blank" href="img/chartII.PNG">
-                  <img src="img/chartII.PNG" />
+                  <img src="img/chartII.PNG" alt="Chart.js Screenshot" />
                 </a>
                 <figcaption class="desc">
                   Created with Chart.js, Node and built w/Browserify
                 </figcaption>
               </figure>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-6">
               <figure>
-                <a
-                  target="_blank"
-                  href="http://akillian.x10host.com/modestmouse/"
-                >
-                  <img src="img/modest_mouse_page.JPG" />
+                <a target="_blank" href="http://modestmouse.surge.sh/">
+                  <img
+                    src="img/modest_mouse_page.JPG"
+                    alt="Modest Mouse Site"
+                  />
                 </a>
                 <figcaption class="desc">
                   Modest Mouse. No Carousel Plugin Used.
                 </figcaption>
               </figure>
-            </div>
 
-            <div class="col-6">
               <figure>
-                <a target="_blank" href="img/modest_mouse_page_II.JPG">
-                  <img src="img/modest_mouse_page_II.JPG" />
+                <a target="_blank" href="http://moviescoop.surge.sh/">
+                  <img
+                    src="img/movie_scoop_landing.JPG"
+                    alt="Movie Scoop Landing Page"
+                  />
                 </a>
                 <figcaption class="desc">
-                  No Extraneous Libraries Needed.
+                  Get The Facts on Your favorite Movies and Actors
                 </figcaption>
               </figure>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="http://akillian.x10host.com/gallery/">
-                  <img src="img/gallery_page.JPG" />
-                </a>
-                <figcaption class="desc">
-                  Photo Gallery using Flexbox
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="img/gallery_page2.JPG">
-                  <img src="img/gallery_page2.JPG" />
-                </a>
-                <figcaption class="desc">Plain Vanilla JS w/CSS</figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="http://omdb_lookup.surge.sh/">
-                  <img src="img/tmdb1.PNG" />
-                </a>
-                <figcaption class="desc">A Simple Movie Lookup Site</figcaption>
-              </figure>
-            </div>
-
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="img/tmdb2.PNG">
-                  <img src="img/tmdb2.PNG" />
-                </a>
-                <figcaption class="desc">
-                  Lookups Implemented using Web API
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-6">
               <figure>
                 <a target="_blank" href="http://sgtpeppers.surge.sh">
-                  <img src="img/sgt_peppers.JPG" />
+                  <img src="img/sgt_peppers.JPG" alt="Sgt. Peppers Site" />
                 </a>
                 <figcaption class="desc">
                   Sgt. Peppers 50th Anniversary. All CSS.
                 </figcaption>
               </figure>
-            </div>
-
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="img/bb_tt_page.JPG">
-                  <img src="img/bb_tt_page.JPG" />
-                </a>
-                <figcaption class="desc">
-                  Trouble Ticket App Written with Bootstrap. PHP/MySQL Used for
-                  Backend
-                </figcaption>
-              </figure>
-            </div>
+            </figure>
           </div>
 
-          <div class="row">
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="img/inventory_table.JPG">
-                  <img src="img/re_inventory_table.JPG" />
-                </a>
-                <figcaption class="desc">
-                  Inventory App using PHP w/MySQL.
-                </figcaption>
-              </figure>
-            </div>
+          <span style="float:left" class="ss-icon" onclick="galleryspin('-')"
+            >&#8617;
+          </span>
+          <span style="float:right" class="ss-icon" onclick="galleryspin('')"
+            >&#8618;
+          </span>
 
-            <div class="col-6">
-              <figure>
-                <a target="_blank" href="img/tt_table.JPG">
-                  <img src="img/re_tt_table.JPG" />
-                </a>
-                <figcaption class="desc">
-                  Trouble Ticket Page Rendered using Bootstrap
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+          <p class="carousel-controls">
+            Controls: cursor left and right or click on arrows to rotate,
+            <b>Z</b> or click to toggle zoom on foreground image, <b>C</b> or
+            hover to show/hide caption.
+          </p>
         </section>
 
         <hr class="hr_style" />
@@ -380,8 +308,8 @@
           </li>
         </ul>
       </footer>
-    </div>
-    <!-- End .wrap div -->
+    
+    <!-- End footer markup -->
 
     <!--
       ====================================================
@@ -395,11 +323,12 @@
       <div>
         <a href="#close" title="Close" class="close">X</a>
         <h2>My Resume</h2>
-        <iframe id="iframeDisplay" src=""> </iframe>
+        <iframe id="iframeDisplay" src="#"> </iframe>
       </div>
     </div>
 
     <!-- ============Javascript Below This Line ==================== -->
     <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
