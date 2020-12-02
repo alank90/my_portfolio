@@ -18,6 +18,7 @@ try {
     // env variables locally
     $sendgrid_username = getenv('SENDGRID_USERNAME');
     $sendgrid_password = getenv('SENDGRID_PASSWORD');
+    $apikey = getenv('SENDGRID_API_KEY');
 
 // Create the Transport
     $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587, 'tls'))
